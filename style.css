@@ -20,6 +20,13 @@ header h1 {
     font-size: 28px;
 }
 
+.profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}
+
 .profile img {
     width: 20px;
     height: 20px;
