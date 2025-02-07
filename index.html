@@ -1,70 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makendra Crosby's Personal Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/0698819b98.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="navbar__container">
-        <a href="/" id="navbar__logo">Portfolio</a>
-        <div class="navbar__toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">Portfolio</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
+    </nav>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main Content -->
+        <main>
+            <section class="intro">
+                <h1>Hello! My name is <i>Makendra Crosby</i>. <i>Welcome to my portfolio page :)!</i></h1>
+                <div class="profile">
+                    <a href="profile.jpg">
+                        <img src="profile.jpg" alt="Makendra Crosby's Profile Picture" loading="lazy" class="profile-pic">
+                    </a>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about-me">
+                <h2>About Me</h2>
+                <div class="about-text">
+                    <p> Recently, I graduated from Old Dominion University with a Bachelor of Science with Departmental Honors in Computer Science. Now, I am a Masters Data Science Student with a Concentration in Artificial Intelligence at Old Dominion University, where I also serve as a Data Science Student Ambassador. Some fun facts about me include that I am an active leader on campus, and I regulary volunteer at the Monarch Pantry, as well as remain involved in my two sororities: Alpha Kappa Alpha Sorority, Inc. & Phi Sigma Rho National STEM Sorority.</p>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section class="courses">
+                <h2>Classes I am currently taking:</h2>
+                <div class="course-list">
+                    <div class="course">
+                        <h3><i class="fa-solid fa-code"></i> CS532 - Web Science</h3>
+                        <p>Exploring fundamental computing principles, algorithms, and problem-solving techniques.</p>
+                    </div>
+                    <div class="course">
+                        <h3><i class="fa-solid fa-database"></i> CS550 - Database Concepts</h3>
+                        <p>Understanding relational databases, SQL, and data modeling.</p>
+                    </div>
+                    <div class="course">
+                        <h3><i class="fa-solid fa-chart-line"></i> CS620 - Intro to Data Science & Analytics</h3>
+                        <p>Learning data analytics techniques, data visualization, and implementing machine learning models.</p>
+                    </div>
+                    <div class="course">
+                        <h3><i class="fa-solid fa-atom"></i> STAT603 - Probability Models for Data Science and Analytics</h3>
+                        <p>Studying probability models and statistical techniques for data-driven decision-making.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resume Section -->
+            <section class="resume">
+                <h2>
+                    <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">
+                        <i class="fa-solid fa-file"></i> My Resume
+                    </a>
+                </h2>
+            </section>
+        </main>
+
+
+        <!-- Social Media Links -->
+        <div class="social__media">
+            <div class="social__media--wrap">
+                <div class="social__icons">
+                    <a href="https://discord.com/channels/@.mcrosby" class="social__icon--link" target="_blank">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="https://instagram.com/m.akendraa.latricee" class="social__icon--link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com/mcros008" class="social__icon--link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/makendracrosby/" class="social__icon--link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Copyright © 2025 by Makendra Crosby | All Rights Reserved.</p>
+        </footer>
+
     </div>
-</nav>
 
-<div class="main">
-    <div class="main__container">
-        <div class="main__content">
-            <h1>Makendra Crosby</h1>
-            <h2>Recent </h2>
-            <p>Data Science (DS) Masters Student at ODU, Data Science (DS) Student Ambassador, and Department of Defense (DoD) Smart Scholar at Old Dominion University.</p>
-            <button class="main__btn" onclick="window.location.href='resume.pdf'">
-                View Resume
-            </button>
-        </div>
-        <div class="main__img--container">
-            <img src="profile.jpg" alt="Makendra's Profile Picture" id="main__img">
-        </div>
-    </div>
-</div>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 
-<div class="about">
-    <h1>About Me</h1>
-    <p>Recently, I graduated from Old Dominion University with a Bachelor of Science with Departmental Honors in Computer Science. Now, I am a Masters Data Science Student with a Concentration in Artificial Intelligence at Old Dominion University, where I also serve as a Data Science Student Ambassador. Some fun facts about me include that I am an active leader on campus, and I regulary volunteer at the Monarch Pantry, as well as remain involved in my two sororities: Alpha Kappa Alpha Sorority, Inc. & Phi Sigma Rho National STEM Sorority. </p>
-</div>
-
-<div class="social__media">
-    <div class="social__media--wrap">
-        <div class="social__icons">
-            <a href="https://discord.com/channels/@.mcrosby" class="social__icon--link" target="_blank">
-                <i class="fab fa-discord"></i>
-            </a>
-            <a href="https://instagram.com/m.akendraa.latricee" class="social__icon--link" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://github.com/mcros008" class="social__icon--link" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/makendracrosby/" class="social__icon--link" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-    </div>
-</div>
-
-<footer>
-  <p>Copyright © 2025 by Makendra Crosby | All Rights Reserved.</p>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
