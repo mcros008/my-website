@@ -28,8 +28,8 @@ header h1 {
 }
 
 .profile img {
-    width: 150px;
-    height: 150px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     border: 3px solid #6a0dad;
     margin-right: 20px; /* Space between image and bio */
