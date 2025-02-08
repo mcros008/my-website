@@ -57,6 +57,10 @@ header h1 {
     background-color: #6a0dad;
 }
 
+.social__icon--link {
+    text-decoration: none; /* Removes underline */
+}
+
 footer {
     margin-top: 20px;
     font-size: 14px;
