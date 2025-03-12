@@ -378,11 +378,15 @@ footer{
 .bottom-footer{
     font-size: 14px;
     margin-top: 10px;
+    justify-content: center;
+    align-items: center;
 }
 .bottom-footer a{
     font-size: 14px;
     margin-top: 10px;
     color: var(--first-color);
+    justify-content: center;
+    align-items: center;
 }
 
 
