@@ -296,6 +296,7 @@ nav{
 
 
 /* ----- CONTACT BOX ----- */
+/* ----- CONTACT BOX ----- */
 .contact-info{
     position: relative;
     display: flex;
@@ -342,7 +343,6 @@ nav{
     margin-top: -20px;
 
 }
-
 
 /* ----- FOOTER BOX ----- */
 footer{
