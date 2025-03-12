@@ -58,7 +58,7 @@ sr.reveal('.gif-container', { delay: 200 });
 /* -- HEADINGS -- */
 sr.reveal('.top-header', {});
 
-function openPopup(box) {
+/*function openPopup(box) {
   const modal = document.getElementById('project-modal');
   const modalTitle = document.getElementById('modal-title');
   const modalDescription = document.getElementById('modal-description');
@@ -90,7 +90,7 @@ window.onclick = function(event) {
       modal.style.display = "none";
   }
 }
-
+*/
 
 
 /* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
