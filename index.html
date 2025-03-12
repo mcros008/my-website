@@ -3,76 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Makendra's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+    <title>Portfolio | Makendra Crosby</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home">
-        <div class="intro">
-            <img src="assets/images/pfp.jpg" alt="Makendra's Picture" class="profile-img">
-            <h1 id="typing-effect">Hi, I am Makendra</h1>
-            <p id="description"></p>
-            <button onclick="window.location.href='assets/resume.pdf'" id="download-resume">Download Resume</button>
+   <div class="container">
+    <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+            <p class="nav-name">Makendra Crosby</p>
+            
         </div>
-    </section>
+        <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+                <li class="nav_list">
+                    <a href="#home" class="nav-link active-link">Home</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#about" class="nav-link">About</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list"></li>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <div class="circle"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <a href="assets/images/resume.pdf" download class="btn download-btn">Download Resume <i class="uil uil-import"></i></a>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a graduate student at Old Dominion University studying Data Science & Analytics  
+
+    <!-- -------------- MAIN ---------------- -->
+    <main class="wrapper">
+       <!-- -------------- FEATURED BOX ---------------- -->
+
+       <section class="featured-box" id="home">
+          <div class="featured-text">
+            <div class="featured-name">
+                <p>I'm <span class="typedText"></span></p>
+            </div>
+            <div class="featured-text-info">
+                <p>I am a graduate student at Old Dominion University studying Data Science & Analytics  
            with a concentration in AI and Machine Learning. Also, I am a student ambasaddor for 
 		the School of Data Science, helping to spread the word about the program through 
 		university events and social media platforms. Some of my hobbies include reading,
 		volunteering at local non-profits or around campus, spending time with my friends
 		and family, trying new food places, and contributing to the goals and mission of 
 		my two sororities (Alpha Kappa Alpha & Phi Sigma Rho).</p>
-    </div>
-    </section>
+            </div>
+            <div class="featured-text-btn">
+                <a href="assets/images/resume.pdf" download class="btn">Download Resume <i class="uil uil-import"></i></a>
+            </div>
+            <div class="social_icons">
+                <a href="https://www.linkedin.com/in/makendracrosby" target="_blank" class="icon">
+                    <i class="uil uil-linkedin-alt"></i>
+                </a>
+                <a href="https://github.com/mcros008" target="_blank" class="icon">
+                    <i class="uil uil-github-alt"></i>
+                </a>
+            </div>
+          </div>
+          <div class="featured-image">
+            <div class="image">
+                <img src="assets/images/avatar.png" alt="avatar">
+            </div>
+            
+    
+          </div>
+        
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>Here are some of my projects and internships.</p>
-        <!-- Add your experiences here -->
-    </section>
+       </section>
+       <div class="gif-container">
+            <img src="assets/images/smiski_website.gif" alt="A fun GIF" />
+        </div>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me on my social media!</p>
-       <!-- Social Media Links -->
-        <div class="social__media">
-            <div class="social__media--wrap">
-                <div class="social__icons">
-                    <a href="https://discord.com/channels/@.mcrosby" class="social__icon--link" target="_blank">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                    <a href="https://instagram.com/m.akendraa.latricee" class="social__icon--link" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://github.com/mcros008" class="social__icon--link" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/makendracrosby/" class="social__icon--link" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
+       <!-- -------------- ABOUT BOX ---------------- -->
+       <section class="section" id="about">
+          <div class="top-header">
+            <h1>About Me</h1>
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="about-info">
+                    <h3>My Blurb</h3>
+                    <p>placeholder for now
+                        
+                    </p>
+                    <div class="about-btn">
+                        <a href="assets/images/resume.pdf" download class="btn download-btn">Download Resume <i class="uil uil-import"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Languages/Scripts</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>Java</span>
+                        <span>Python</span>
+                        <span>C/C++</span>
+                        <span>SQL</span>
+                        <span>HTML/CSS</span>
+                        <span>Javascript</span>
+                    </div>
+                </div>
+                
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Frameworks/Libraries</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>React</span>
+                        <span>Next.js</span>
+                        <span>Node.js</span>
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                        <span>Seaborn</span>
+                        <span>Matplotlib</span>
+
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Developer Tools</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>Git</span>
+                        <span>VS Code</span>
+                        <span>Jupyter</span>
+                        <span>GitHub</span>
+                        <span>JIRA</span>
+                        <span>MySQL</span>
+                        <span>Figma</span>
+                        <span>UI/UX</span>
+
+                    </div>
+                </div>
+            </div>
+          </div>
+       </section>
+
+       <!-- -------------- EXPERIENCE BOX ---------------- -->
+       <section class="section" id="experience">
+        <div class="top-header">
+            <h1>Experience</h1>
+        </div>
+        <div class="timeline-section">
+            <div class="timeline-list">
+                <div class="timeline-item">
+                    <h3>System Administrator Intern</h3>
+                    <span>Old Dominion University | Summer 2024</span>
+                    <p>Managed IT infrastructure, supported system security, and ensured optimal system performance.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Cyber Risk Management Specialist</h3>
+                    <span>ODU Cybersecurity Internship Clinic | Spring 2024</span>
+                    <p>Developed cybersecurity frameworks for small businesses and government organizations.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Cybersecurity Peer Mentor</h3>
+                    <span>Old Dominion University | 2024</span>
+                    <p>Provided guidance and mentorship to students in the Cybersecurity Living-Learning Community.</p>
                 </div>
             </div>
         </div>
+     </section>
 
+
+
+       <!-- -------------- PROJECT BOX ---------------- -->
+       <section class="section" id="projects">
+        <div class="top-header">
+            <h1>Projects</h1>
+        </div>
+        <div class="project-container">
+            <div class="project-box" data-title="CyberSense" data-description="Cybersecurity education and training web application" data-link="https://github.com/mcros008/cybersense" onclick="openPopup(this)">
+                <h3>CyberSense</h3>
+                <label>Cybersecurity education and training web application</label>
+            </div>
+            <div class="project-box" data-title="AI & Autonomous Vehicles Research" data-description="Undergraduate research on AI implementation in self-driving cars" onclick="openPopup(this)">
+                <h3>AI & Autonomous Vehicles Research</h3>
+                <label>Research on AI implementation in self-driving cars</label>
+            </div>
+            <div class="project-box" data-title="Database CLI Tool" data-description="SQL database tool developed using a CLI in Ubuntu VM" data-link="https://github.com/mcros008/database-cli" onclick="openPopup(this)">
+                <h3>Database CLI Tool</h3>
+                <label>SQL database tool developed in Ubuntu VM</label>
+            </div>
+        </div>
+        
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title">Project Title</h2>
+                <p id="modal-description">Project description goes here.</p>
+                <a id="modal-link" href="#" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+    
+
+       <!-- -------------- CONTACT BOX ---------------- -->
+
+       <section class="section" id="contact">
+          <div class="top-header">
+            <h1>Get in touch</h1>
+            <span>Feel free to reach out to me about any inquires or oportunities</span>
+          </div>
+          <div class="row">
+             <div class="col">
+                <div class="contact-info">
+                    <h2>Contact Me <i class="uil uil-corner-right-down"></i></h2>
+                    <p><i class="uil uil-envelope"></i> Email: mcros008@odu.edu</p>
+                    <p><i class="uil uil-phone"></i> Tel: (757)582-7364</p>
+                </div>
+             </div>
+             <img src="assets/images/work.png" alt="work simiski" class="contact-image">
+          </div>
+       </section>
+
+    </main>
+
+
+    <!-- --------------- FOOTER --------------- -->
     <footer>
-        <p>&copy; Copyright © 2025 by Makendra Crosby | All Rights Reserved.</p>
+        <div class="top-footer">
+            <p>Makendra Crosby</p>
+        </div>
+        <div class="middle-footer">
+            <ul class="footer-menu">
+                <li class="footer_menu_list">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#about">About</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#experience">Experience</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#projects">Projects</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="social_icons">
+            <a href="https://www.linkedin.com/in/makendracrosby" target="_blank" class="icon">
+                <i class="uil uil-linkedin-alt"></i>
+            </a>
+            <a href="https://github.com/mcros008" target="_blank" class="icon">
+                <i class="uil uil-github-alt"></i>
+            </a>
+        </div>
+        <div class="bottom-footer">
+            <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Makendra Crosby</a> - All rights reserved</p>
+        </div>
     </footer>
+
+    </div>
+
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+       <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
 
     <script src="script.js"></script>
 </body>
