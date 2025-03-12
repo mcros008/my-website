@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Makendra Crosby's Personal Portfolio</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Makendra's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+    <section id="home">
+        <div class="intro">
+            <img src="assets/images/pfp.jpg" alt="Makendra's Picture" class="profile-img">
+            <h1 id="typing-effect">Hi, I am Makendra</h1>
+            <p id="description"></p>
+            <button onclick="window.location.href='assets/resume.pdf'" id="download-resume">Download Resume</button>
+        </div>
+    </section>
 
-        <!-- Main Content -->
-        <main>
-            <section class="intro">
-                <h1><i>Hello! My name is Makendra Crosby. Welcome to my portfolio page :) !</i></h1>
-                <div class="profile">
-                    <a href="profile.jpg">
-                        <img src="profile.jpg" alt="Makendra Crosby's Profile Picture" loading="lazy" class="profile-pic">
-                    </a>
-                </div>
-            </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a graduate student at Old Dominion University studying Data Science & Analytics  
+           with a concentration in AI and Machine Learning. Also, I am a student ambasaddor for 
+		the School of Data Science, helping to spread the word about the program through 
+		university events and social media platforms. Some of my hobbies include reading,
+		volunteering at local non-profits or around campus, spending time with my friends
+		and family, trying new food places, and contributing to the goals and mission of 
+		my two sororities (Alpha Kappa Alpha & Phi Sigma Rho).</p>
+    </div>
+    </section>
 
-            <!-- About Section -->
-            <section class="about-me">
-                <h2>About Me</h2>
-                <div class="about-text">
-                    <p>I graduated from Old Dominion University with a Bachelor of Science with Departmental Honors in Computer Science 
-			    in December 2024. Currently, I am a Masters Data Science & Analytics Student with a Concentration in Artificial 
-			    Intelligence at Old Dominion University, expected to graduate in May 2026. Some fun facts about me include:
-			    👩🏾‍💻 I am a Data Science Student Ambassador, helping to promote the program and support other students.
-			    👩🏾‍💻 I regularly volunteer at the Monarch Pantry, a great food resource for those in need on campus.
-			    👩🏾‍💻 I am an active member of Alpha Kappa Alpha Sorority, Inc. & Phi Sigma Rho National STEM Sorority.
-		    </p>
-                </div>
-            </section>
+    <section id="experience">
+        <h2>Experience</h2>
+        <p>Here are some of my projects and internships.</p>
+        <!-- Add your experiences here -->
+    </section>
 
-            <!-- Resume Section -->
-            <section class="resume">
-                <h2>
-                    <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">
-                        <i class="fa-solid fa-file"></i> View Resume
-                    </a>
-                </h2>
-            </section>
-        </main>
-
-
-        <!-- Social Media Links -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me on my social media!</p>
+       <!-- Social Media Links -->
         <div class="social__media">
             <div class="social__media--wrap">
                 <div class="social__icons">
@@ -69,15 +70,10 @@
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer>
-            <p>Copyright © 2025 by Makendra Crosby | All Rights Reserved.</p>
-        </footer>
+    <footer>
+        <p>&copy; Copyright © 2025 by Makendra Crosby | All Rights Reserved.</p>
+    </footer>
 
-    </div>
-
-    <!-- JavaScript -->
     <script src="script.js"></script>
-
 </body>
 </html>
