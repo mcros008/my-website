@@ -28,7 +28,7 @@ function headerShadow() {
 
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText", {
-  strings: ["makendra here.", "welcome to my personal eportfolio!", "take a look around :)"],
+  strings: ["makendra here.", "welcome to my personal eportfolio!", "take a look around."],
   loop: true,
   typeSpeed: 100,
   backSpeed: 80,
