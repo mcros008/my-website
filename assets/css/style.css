@@ -294,6 +294,85 @@ nav{
     z-index: 99;
     /*transform: scaleX(-1); /* Mirror the image horizontally */
 
+    /* ----- NEW SECTIONS ----- */
+section {
+    padding: 6rem 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-color-second);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 10vw;
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: var(--text-color-second);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+}
+
+.experience, .projects {
+    background: var(--color-white);
+    margin: 3rem 0;
+    border-radius: 20px;
+    padding: 4rem 10vw;
+    box-shadow: 0 10px 30px var(--first-shadow-color);
+}
+
+.experience-item, .project-item {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: var(--body-color);
+    border-radius: 15px;
+    border-left: 4px solid var(--first-color);
+}
+
+.experience-item h3, .project-item h3 {
+    font-size: 1.4rem;
+    color: var(--second-color);
+    margin-bottom: 0.5rem;
+}
+
+.experience-item p:first-of-type, .project-item p:first-of-type {
+    font-weight: 500;
+    color: var(--text-color-second);
+    margin-bottom: 0.5rem;
+}
+
+.experience-item p:last-of-type, .project-item p:last-of-type {
+    color: var(--text-color-third);
+    line-height: 1.6;
+}
+
+.project-item a {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 500;
+    color: var(--first-color);
+    text-decoration: none;
+}
+
+.project-item a:hover {
+    color: var(--second-color);
+    text-decoration: underline;
+}
+
+/* Active nav link updates */
+.nav-link.active-link {
+    color: var(--first-color) !important;
+}
+
 
 /* ----- CONTACT BOX ----- */
 /* ----- CONTACT BOX ----- */
