@@ -280,19 +280,72 @@ nav{
     }
 }
 
-.gif-container {
+/* .gif-container {
     text-align: right; /* Center the GIF */
-    margin: -500px 400px 20px ; /* Move it higher, adjust as needed */
-    position: absolute;
+     /* margin: -500px 400px 20px ; /* Move it higher, adjust as needed */
+     /* position: absolute;
     z-index: 99;
 
-}
+} 
 
 .gif-container img {
     max-width: 60%; /* Ensure it fits the container */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 99;
+    /* height: auto; /* Maintain aspect ratio */
+    /* z-index: 99;
     /*transform: scaleX(-1); /* Mirror the image horizontally */
+/* ----- DECORATIVE ELEMENTS AROUND PFP ----- */
+.featured-image {
+    position: relative; /* Add this to enable absolute positioning of children */
+    display: flex;
+    justify-content: right;
+    align-content: center;
+    min-height: 80vh;
+    width: 50%;
+    z-index: 1;
+}
+
+.decorative-gif,
+.decorative-meme,
+.decorative-pic {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 2;
+    animation: floatDecor 6s ease-in-out infinite;
+}
+
+/* Position each decorative element */
+.gif-top-left {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.gif-top-right {
+    top: 15%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.meme-bottom-left {
+    bottom: 20%;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+.meme-bottom-right {
+    bottom: 15%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+@keyframes floatDecor {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
 
     /* ----- NEW SECTIONS ----- */
 section {
