@@ -320,8 +320,8 @@ nav{
 .decorative-meme,
 .decorative-pic {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     object-fit: contain;
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     z-index: 2;
