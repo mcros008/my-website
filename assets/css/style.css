@@ -304,6 +304,18 @@ nav{
     z-index: 1;
 }
 
+.overlap-pic {
+    position: absolute;
+    top: 50%;               /* vertically center relative to container */
+    left: 65%;              /* move horizontally near right of pfp (adjust as needed) */
+    transform: translateY(-50%); /* true vertical centering */
+    width: 150px;           /* size of new pic */
+    height: auto;
+    z-index: 10;            /* make sure it’s on top */
+    pointer-events: none;   /* optional: lets clicks go through */
+    /* border-radius: 15px;    /* optional rounding */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+
 .decorative-gif,
 .decorative-meme,
 .decorative-pic {
