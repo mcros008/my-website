@@ -308,9 +308,9 @@ nav{
 .decorative-meme,
 .decorative-pic {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+    /* width: 100px;
+    height: 100px; */
+    object-fit: contain;
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     z-index: 2;
     animation: floatDecor 6s ease-in-out infinite;
@@ -324,7 +324,7 @@ nav{
     animation-delay: 0s;
 }
 
-.gif-top-right {
+/*.gif-top-right {
     top: 15%;
     right: 15%;
     animation-delay: 1s;
@@ -340,7 +340,7 @@ nav{
     bottom: 15%;
     right: 45%;
     animation-delay: 3s;
-}
+}*/
 
 @keyframes floatDecor {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
