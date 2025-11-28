@@ -306,8 +306,8 @@ nav{
 
 .overlap-pic {
     position: absolute;
-    top: 50%;               /* vertically center relative to container */
-    left: 65%;              /* move horizontally near right of pfp (adjust as needed) */
+    top: 70%;               /* vertically center relative to container */
+    left: 85%;              /* move horizontally near right of pfp (adjust as needed) */
     transform: translateY(-50%); /* true vertical centering */
     width: 150px;           /* size of new pic */
     height: auto;
@@ -316,7 +316,7 @@ nav{
     /* border-radius: 15px;    /* optional rounding */
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 
-.decorative-gif,
+/* .decorative-gif,
 .decorative-meme,
 .decorative-pic {
     position: absolute;
@@ -326,11 +326,12 @@ nav{
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     z-index: 2;
     animation: floatDecor 6s ease-in-out infinite;
-    border-radius: 8px; /* Just slight rounding, not full circles */
-}
+    border-radius: 8px; /* Just slight rounding, not full circles
+    } */
+ 
 
 /* Position each decorative element */
-.gif-bottom-left {
+/* .gif-bottom-left {
     bottom: 20%;
     left: 15%;
     animation-delay: 2s;
