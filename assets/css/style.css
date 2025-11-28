@@ -319,7 +319,7 @@ nav{
 
 /* Position each decorative element */
 .gif-bottom-left {
-    top: 20%;
+    bottom: 20%;
     left: 10%;
     animation-delay: 2s;
 }
