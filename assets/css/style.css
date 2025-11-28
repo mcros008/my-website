@@ -251,12 +251,13 @@ nav{
 
 /* ----- FEATURED IMAGE BOX ----- */
 .featured-image{
+    position: relative;
     display: flex;
     justify-content: right;
     align-content: center;
     min-height: 80vh;
     width: 50%;
-    z-index: 1;
+    z-index: 1
 }
 .image{
     margin: auto 0;
@@ -294,15 +295,6 @@ nav{
     /* z-index: 99;
     /*transform: scaleX(-1); /* Mirror the image horizontally */
 /* ----- DECORATIVE ELEMENTS AROUND PFP ----- */
-.featured-image {
-    position: relative; /* Add this to enable absolute positioning of children */
-    display: flex;
-    justify-content: right;
-    align-content: center;
-    min-height: 120vh;
-    width: 50%;
-    z-index: 1;
-}
 
 .overlap-pic {
     position: absolute;
@@ -315,6 +307,7 @@ nav{
     pointer-events: none;   /* optional: lets clicks go through */
     /* border-radius: 15px;    /* optional rounding */
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    background: transparent;
 
 /* .decorative-gif,
 .decorative-meme,
