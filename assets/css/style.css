@@ -308,19 +308,19 @@ nav{
 .decorative-meme,
 .decorative-pic {
     position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     z-index: 2;
     animation: floatDecor 6s ease-in-out infinite;
+    border-radius: 8px; /* Just slight rounding, not full circles */
 }
 
 /* Position each decorative element */
 .gif-top-left {
     top: 10%;
-    left: 10%;
+    left: 20%;
     animation-delay: 0s;
 }
 
@@ -332,13 +332,13 @@ nav{
 
 .meme-bottom-left {
     bottom: 20%;
-    left: 5%;
+    left: 10%;
     animation-delay: 2s;
 }
 
 .meme-bottom-right {
     bottom: 15%;
-    right: 20%;
+    right: 35%;
     animation-delay: 3s;
 }
 
