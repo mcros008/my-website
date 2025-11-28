@@ -318,10 +318,10 @@ nav{
 }
 
 /* Position each decorative element */
-.gif-top-left {
-    top: 10%;
-    left: 20%;
-    animation-delay: 0s;
+.gif-bottom-left {
+    top: 20%;
+    left: 10%;
+    animation-delay: 2s;
 }
 
 /*.gif-top-right {
