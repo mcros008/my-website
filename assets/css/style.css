@@ -308,8 +308,8 @@ nav{
 .decorative-meme,
 .decorative-pic {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     z-index: 2;
@@ -320,17 +320,17 @@ nav{
 /* Position each decorative element */
 .gif-bottom-left {
     bottom: 20%;
-    left: 10%;
+    left: 15%;
     animation-delay: 2s;
 }
 
-/*.gif-top-right {
+/* .gif-bottom-right {
     top: 15%;
     right: 15%;
     animation-delay: 1s;
 }
 
-.meme-bottom-left {
+/* .meme-bottom-left {
     bottom: 20%;
     left: 10%;
     animation-delay: 2s;
