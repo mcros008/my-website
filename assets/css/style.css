@@ -299,7 +299,7 @@ nav{
     display: flex;
     justify-content: right;
     align-content: center;
-    min-height: 80vh;
+    min-height: 120vh;
     width: 50%;
     z-index: 1;
 }
@@ -338,7 +338,7 @@ nav{
 
 .meme-bottom-right {
     bottom: 15%;
-    right: 35%;
+    right: 45%;
     animation-delay: 3s;
 }
 
