@@ -1,3 +1,73 @@
+/* ----- PARTICLES BACKGROUND ----- */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.featured-text, .featured-image {
+    position: relative;
+    z-index: 1;
+}
+
+/* ----- PROJECT CARDS & FILTERS ----- */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.project-card {
+    flex: 1 1 300px;
+    background: var(--body-color);
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 4px solid var(--first-color);
+    transition: transform 0.3s;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+}
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.filter-btn {
+    padding: 10px 20px;
+    border: none;
+    background: var(--first-color);
+    color: var(--color-white);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.filter-btn.active, .filter-btn:hover {
+    background: var(--second-color);
+}
+
+/* ----- EXPERIENCE CLICK-THROUGH ----- */
+.exp-title {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.exp-details {
+    margin-top: 10px;
+}
+.toggle-btn {
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+.toggle-btn.active {
+    transform: rotate(45deg);
+}
+
 /* ----- POPPINS FONT Link ----- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
