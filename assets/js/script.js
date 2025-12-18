@@ -116,3 +116,60 @@ function scrollActive() {
 }
 
 window.addEventListener('scroll', scrollActive);
+
+/* ----- PARTICLES CONFIG ----- */
+particlesJS("particles-js", {
+    "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#c850c0" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 4 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#d291bc", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 3, "direction": "none", "out_mode": "out" }
+    },
+    "interactivity": {
+        "events": {
+            "onhover": { "enable": true, "mode": "repulse" },
+            "onclick": { "enable": true, "mode": "push" }
+        }
+    },
+    "retina_detect": true
+});
+
+/* ----- PROJECT FILTERING ----- */
+const filterBtns = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        filterBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.getAttribute("data-filter");
+        projectCards.forEach(card => {
+            if (filter === "all" || card.dataset.category === filter) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+});
+
+/* ----- EXPERIENCE CLICK-THROUGH ----- */
+const expTitles = document.querySelectorAll(".exp-title");
+expTitles.forEach(title => {
+    title.addEventListener("click", () => {
+        const details = title.nextElementSibling;
+        const toggle = title.querySelector(".toggle-btn");
+        if (details.style.display === "none") {
+            details.style.display = "block";
+            toggle.classList.add("active");
+        } else {
+            details.style.display = "none";
+            toggle.classList.remove("active");
+        }
+    });
+});
+
