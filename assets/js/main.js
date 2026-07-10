@@ -406,8 +406,8 @@ function initializeProjectFilters() {
    EXPERIENCE DATA
 ===================================================== */
 
-const experiences = [
-/*    {
+/*  const experiences = [
+   {
         title: "Scientist",
         organization:
             "NSWC Corona Division",
