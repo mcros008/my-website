@@ -1,367 +1,1345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- =====================================================
+         BASIC PAGE SETTINGS
+         Defines the character set, mobile responsiveness,
+         page description, and browser title.
+    ====================================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- --------- UNICONS ---------- -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <meta
+        name="description"
+        content="The personal portfolio of Makendra Crosby, a computer science and data science professional with experience in cybersecurity, artificial intelligence, machine learning, software development, and technical leadership."
+    >
 
-    <!-- --------- CSS ---------- -->
+    <meta name="author" content="Makendra Crosby">
+
+    <title>Makendra Crosby | Technology Portfolio</title>
+
+
+    <!-- =====================================================
+         UNICONS ICON LIBRARY
+         Provides the icons used in the navigation, buttons,
+         social links, education cards, and footer.
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    >
+
+
+    <!-- =====================================================
+         WEBSITE STYLESHEET
+         Loads the custom CSS for the entire website.
+    ====================================================== -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- --------- FAVICON ---------- -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 
-    <title>Personal Website | Makendra Crosby</title>
+    <!-- =====================================================
+         FAVICON
+         Displays a small icon in the browser tab.
+    ====================================================== -->
+    <link
+        rel="shortcut icon"
+        href="assets/images/favicon.png"
+        type="image/x-icon"
+    >
 </head>
 
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="assets/js/main.js"></script>
-    
 <body>
-<div class="container">
-    <!-- --------------- HEADER/NAV MENU --------------- -->
-    <nav id="header">
-        <div class="nav-logo">
-            <p class="nav-name">Makendra Crosby</p>  
-        </div>
-        <div class="nav-menu" id="myNavMenu">
-            <ul class="nav_menu_list">
-                <li class="nav_list">
-                    <a href="#home" class="nav-link active-link">Home</a>
-                    <div class="circle"></div>
-                </li>
-                <li class="nav_list">
-                    <a href="#about" class="nav-link">About Me</a>
-                    <div class="circle"></div>
-                </li>
-                <li class="nav_list">
-                    <a href="#experience" class="nav-link">Experience</a>
-                    <div class="circle"></div>
-                </li>
-                <li class="nav_list">
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <div class="circle"></div>
-                </li>
-            </ul>
-        </div> 
-        <div class="nav-button">
-            <a href="assets/resume/resume.pdf" download class="btn download-btn">Download Resume <i class="uil uil-import"></i></a>
-        </div>
-        <div class="nav-menu-btn">
-            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
-        </div>
-    </nav>
+    <div class="container">
 
-    <!-- -------------- MAIN ---------------- -->
-    <main class="wrapper">
-        <!-- -------------- FEATURED BOX/HOME ---------------- -->
-    <div class="featured-text">
-    <div class="featured-text-card">
-        <span>Computer Science • Data Science • Cybersecurity</span>
-    </div>
+        <!-- =================================================
+             HEADER AND NAVIGATION
+             The fixed navigation bar links visitors to each
+             major section of the portfolio.
+        ================================================== -->
+        <nav id="header" aria-label="Main navigation">
 
-    <div class="featured-name">
-        <p><span class="typedGreeting"></span></p>
-    </div>
-
-    <div class="featured-role">
-        <p>I’m a <span class="typedRole"></span></p>
-    </div>
-
-    <div class="featured-text-info">
-        <p>
-            I am a computer science and data science professional with experience
-            in cybersecurity, artificial intelligence, machine learning, data
-            analytics, software development, and federal technology environments.
-        </p>
-    </div>
-
-    <div class="featured-text-btn">
-        <a href="#projects" class="btn blue-btn">
-            View My Work <i class="uil uil-arrow-right"></i>
-        </a>
-
-        <a href="assets/resume/Makendra-Crosby-Resume.pdf"
-           target="_blank"
-           class="btn">
-            View Resume <i class="uil uil-file-alt"></i>
-        </a>
-    </div>
-
-    <div class="social_icons">
-        <a href="https://www.linkedin.com/in/makendracrosby"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="icon"
-           aria-label="LinkedIn">
-            <i class="uil uil-linkedin-alt"></i>
-        </a>
-
-        <a href="https://github.com/mcros008"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="icon"
-           aria-label="GitHub">
-            <i class="uil uil-github-alt"></i>
-        </a>
-
-        <a href="mailto:makendracrosby100@gmail.com"
-           class="icon"
-           aria-label="Email">
-            <i class="uil uil-envelope"></i>
-        </a>
-
-        <a href="https://www.instagram.com/m.akendraa.latricee"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="icon"
-           aria-label="Instagram">
-            <i class="uil uil-instagram"></i>
-        </a>
-    </div>
-</div>
-        </section>
-
-        <!-- -------------- ABOUT SECTION ---------------- -->
-<section class="about section" id="about">
-    <div class="top-header">
-        <h2>About Me</h2>
-        <span>Get to know me</span>
-    </div>
-
-    <div class="about-container">
-        <div class="about-image">
-            <img
-                src="assets/images/makendra-about.jpg"
-                alt="Makendra Crosby"
-                loading="lazy"
-            >
-        </div>
-
-        <div class="about-content">
-            <p>
-                I am a technology professional with a Bachelor of Science in
-                Computer Science and a Master of Science in Data Science and
-                Analytics with a concentration in Artificial Intelligence and
-                Machine Learning from Old Dominion University.
-            </p>
-
-            <p>
-                My background includes cybersecurity, data analysis, machine
-                learning, software development, technical documentation,
-                modeling and simulation, leadership, and student mentorship.
-                I enjoy using technology to solve real problems and explaining
-                technical ideas in ways that are easy to understand.
-            </p>
-
-            <p>
-                I am especially interested in the intersection of cybersecurity,
-                artificial intelligence, data science, and public service. Outside
-                of technology, I enjoy fashion, creative projects, community
-                service, and building LEGO sets.
-            </p>
-
-            <div class="about-highlights">
-                <div class="highlight">
-                    <strong>2</strong>
-                    <span>Technology Degrees</span>
-                </div>
-
-                <div class="highlight">
-                    <strong>2</strong>
-                    <span>CompTIA Certifications</span>
-                </div>
-
-                <div class="highlight">
-                    <strong>Multiple</strong>
-                    <span>Leadership Roles</span>
-                </div>
+            <!-- Website name/logo -->
+            <div class="nav-logo">
+                <a href="#home" class="nav-name">
+                    Makendra Crosby
+                </a>
             </div>
 
-            <a href="#contact" class="btn">
-                Contact Me <i class="uil uil-message"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-        <!-- -------------- EXPERIENCE SECTION ---------------- -->
-       <section class="experience section" id="experience">
-    <div class="top-header">
-        <h2>Experience</h2>
-        <span>My professional and leadership journey</span>
-    </div>
-
-    <div class="experience-container">
-
-        <article class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <h3>SMART Scholar</h3>
-                    <h4>U.S. Department of Defense</h4>
-                </div>
-                <span class="experience-date">2024 – Present</span>
-            </div>
-
-            <button class="toggle-btn" aria-expanded="false">
-                View Details <i class="uil uil-angle-down"></i>
-            </button>
-
-            <div class="exp-details">
-                <ul>
-                    <li>
-                        Selected for the Department of Defense SMART Scholarship
-                        program in support of advanced technical education and
-                        federal service.
+            <!-- Desktop and mobile navigation links -->
+            <div class="nav-menu" id="myNavMenu">
+                <ul class="nav_menu_list">
+                    <li class="nav_list">
+                        <a href="#home" class="nav-link active-link">
+                            Home
+                        </a>
                     </li>
-                    <li>
-                        Completed graduate studies in data science, artificial
-                        intelligence, machine learning, and cybersecurity.
+
+                    <li class="nav_list">
+                        <a href="#about" class="nav-link">
+                            About Me
+                        </a>
+                    </li>
+
+                    <li class="nav_list">
+                        <a href="#education" class="nav-link">
+                            Education
+                        </a>
+                    </li>
+
+                    <li class="nav_list">
+                        <a href="#experience" class="nav-link">
+                            Experience
+                        </a>
+                    </li>
+
+                    <li class="nav_list">
+                        <a href="#skills" class="nav-link">
+                            Skills
+                        </a>
+                    </li>
+
+                    <li class="nav_list">
+                        <a href="#projects" class="nav-link">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li class="nav_list">
+                        <a href="#contact" class="nav-link">
+                            Contact
+                        </a>
                     </li>
                 </ul>
             </div>
-        </article>
 
-        <article class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <h3>SMART Scholar Intern</h3>
-                    <h4>Naval Surface Warfare Center Dahlgren Division</h4>
-                </div>
-                <span class="experience-date">May 2025 – July 2025</span>
+            <!-- Resume download button shown on larger screens -->
+            <div class="nav-button">
+                <a
+                    href="assets/resume/MakendraCrosby_Resume_3.docx"
+                    download
+                    class="btn download-btn"
+                >
+                    Download Resume
+                    <i class="uil uil-import" aria-hidden="true"></i>
+                </a>
             </div>
 
-            <button class="toggle-btn" aria-expanded="false">
-                View Details <i class="uil uil-angle-down"></i>
-            </button>
-
-            <div class="exp-details">
-                <ul>
-                    <li>
-                        Supported modeling and simulation testing and technical
-                        documentation.
-                    </li>
-                    <li>
-                        Developed test procedures and updated system requirements
-                        documentation.
-                    </li>
-                    <li>
-                        Created a Confluence guide to improve access to technical
-                        information and internal processes.
-                    </li>
-                </ul>
+            <!-- Mobile menu button -->
+            <div class="nav-menu-btn">
+                <button
+                    type="button"
+                    aria-label="Open navigation menu"
+                    onclick="myMenuFunction()"
+                    style="border: none; background: transparent;"
+                >
+                    <i class="uil uil-bars" aria-hidden="true"></i>
+                </button>
             </div>
-        </article>
+        </nav>
 
-        <article class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <h3>Graduate Assistant</h3>
-                    <h4>Old Dominion University</h4>
-                </div>
-                <span class="experience-date">2025 – 2026</span>
-            </div>
 
-            <button class="toggle-btn" aria-expanded="false">
-                View Details <i class="uil uil-angle-down"></i>
-            </button>
+        <!-- =================================================
+             MAIN PAGE CONTENT
+        ================================================== -->
+        <main class="wrapper">
 
-            <div class="exp-details">
-                <ul>
-                    <li>
-                        Supported Living-Learning Communities and supervised
-                        student peer mentors from several academic programs.
-                    </li>
-                    <li>
-                        Coordinated student programming, leadership activities,
-                        outreach efforts, and community service projects.
-                    </li>
-                    <li>
-                        Helped students connect academic experiences with career
-                        and leadership development.
-                    </li>
-                </ul>
-            </div>
-        </article>
+            <!-- =============================================
+                 HOME / HERO SECTION
+                 Introduces Makendra and includes rotating text,
+                 resume buttons, social links, and a main photo.
+            ============================================== -->
+            <section class="featured-box" id="home">
 
-        <article class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <h3>Data Science Student Ambassador</h3>
-                    <h4>Old Dominion University</h4>
-                </div>
-                <span class="experience-date">2025 – 2026</span>
-            </div>
+                <!-- Animated particles appear behind the hero -->
+                <div id="particles-js" aria-hidden="true"></div>
 
-            <button class="toggle-btn" aria-expanded="false">
-                View Details <i class="uil uil-angle-down"></i>
-            </button>
+                <!-- Main introduction text -->
+                <div class="featured-text">
 
-            <div class="exp-details">
-                <ul>
-                    <li>
-                        Represented the School of Data Science during student,
-                        academic, and community events.
-                    </li>
-                    <li>
-                        Shared information about data science programs and student
-                        opportunities.
-                    </li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <h3>Cybersecurity Clinic Intern</h3>
-                    <h4>Old Dominion University</h4>
-                </div>
-                <span class="experience-date">Add Dates</span>
-            </div>
-
-            <button class="toggle-btn" aria-expanded="false">
-                View Details <i class="uil uil-angle-down"></i>
-            </button>
-
-            <div class="exp-details">
-                <ul>
-                    <li>
-                        Assisted with cybersecurity assessments for small
-                        businesses and community organizations.
-                    </li>
-                    <li>
-                        Reviewed security practices and helped identify potential
-                        risks and areas for improvement.
-                    </li>
-                </ul>
-            </div>
-        </article>
-
-    </div>
-</section>
-
-        <!-- -------------- PROJECTS SECTION ---------------- -->
-        <section class="projects featured-box" id="projects">
-            <div class="featured-text">
-                <div class="featured-name">
-                    <h2>Projects</h2>
-
-                    <!-- Filters -->
-                    <div class="project-filters">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="web">Web</button>
-                        <button class="filter-btn" data-filter="data">Data</button>
-                        <button class="filter-btn" data-filter="ml">ML</button>
+                    <!-- Short professional focus label -->
+                    <div class="featured-text-card">
+                        <span>
+                            Computer Science • Data Science • Cybersecurity
+                        </span>
                     </div>
 
-                    <div class="projects-container">
-                        <div class="project-card" data-category="web">
-                            <h3>Website Project</h3>
-                            <p>Built a responsive website.</p>
+                    <!-- Typed.js rotates the greeting text here -->
+                    <div class="featured-name">
+                        <p>
+                            <span class="typedGreeting"></span>
+                        </p>
+                    </div>
+
+                    <!-- Typed.js rotates professional roles here -->
+                    <div class="featured-role">
+                        <p>
+                            I’m a <span class="typedRole"></span>
+                        </p>
+                    </div>
+
+                    <!-- Short professional biography -->
+                    <div class="featured-text-info">
+                        <p>
+                            I am a computer science and data science professional
+                            with experience in cybersecurity, artificial
+                            intelligence, machine learning, data analytics,
+                            software development, technical documentation, and
+                            federal technology environments.
+                        </p>
+                    </div>
+
+                    <!-- Main call-to-action buttons -->
+                    <div class="featured-text-btn">
+                        <a href="#projects" class="btn blue-btn">
+                            View My Work
+                            <i
+                                class="uil uil-arrow-right"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+                        <a
+                            href="assets/resume/MakendraCrosby_Resume_3.docx"
+                            download
+                            class="btn resume-button"
+                        >
+                            Download Resume
+                            <i
+                                class="uil uil-file-download"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+                    </div>
+
+                    <!-- Social media and contact links -->
+                    <div class="social_icons">
+                        <a
+                            href="https://www.linkedin.com/in/makendracrosby"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="icon"
+                            aria-label="Visit Makendra's LinkedIn profile"
+                        >
+                            <i
+                                class="uil uil-linkedin-alt"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+                        <a
+                            href="https://github.com/mcros008"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="icon"
+                            aria-label="Visit Makendra's GitHub profile"
+                        >
+                            <i
+                                class="uil uil-github-alt"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+                        <a
+                            href="mailto:makendracrosby100@gmail.com"
+                            class="icon"
+                            aria-label="Email Makendra"
+                        >
+                            <i
+                                class="uil uil-envelope"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+                        <a
+                            href="https://www.instagram.com/m.akendraa.latricee"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="icon"
+                            aria-label="Visit Makendra's Instagram profile"
+                        >
+                            <i
+                                class="uil uil-instagram"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Main profile image -->
+                <div class="featured-image">
+                    <div class="image">
+                        <img
+                            src="assets/images/makendra-headshot.jpg"
+                            alt="Professional headshot of Makendra Crosby"
+                        >
+                    </div>
+
+                    <!-- Decorative circles behind the profile photo -->
+                    <div
+                        class="image-decoration decoration-one"
+                        aria-hidden="true"
+                    ></div>
+
+                    <div
+                        class="image-decoration decoration-two"
+                        aria-hidden="true"
+                    ></div>
+                </div>
+            </section>
+
+
+            <!-- =============================================
+                 ABOUT ME SECTION
+                 Provides a longer introduction, personal photo,
+                 quick facts, and LEGO fun fact.
+            ============================================== -->
+            <section class="about section" id="about">
+                <div class="top-header">
+                    <h2>About Me</h2>
+                    <span>Get to know me</span>
+                </div>
+
+                <div class="about-container">
+
+                    <!-- Secondary personal or professional photo -->
+                    <div class="about-image">
+                        <img
+                            src="assets/images/makendra-about.jpg"
+                            alt="Makendra Crosby"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <!-- About Me text -->
+                    <div class="about-content">
+                        <p>
+                            I am a technology professional with a Bachelor of
+                            Science in Computer Science and a Master of Science
+                            in Data Science and Analytics with a concentration
+                            in Artificial Intelligence and Machine Learning
+                            from Old Dominion University.
+                        </p>
+
+                        <p>
+                            My background includes cybersecurity, data analysis,
+                            machine learning, software development, modeling and
+                            simulation, technical documentation, leadership, and
+                            student mentorship. I enjoy solving problems and
+                            explaining technical ideas in ways that are easy to
+                            understand.
+                        </p>
+
+                        <p>
+                            I am especially interested in the intersection of
+                            cybersecurity, artificial intelligence, data
+                            science, and public service. I also enjoy creative
+                            projects, fashion, community service, and finding
+                            new ways to keep learning.
+                        </p>
+
+                        <!-- Quick portfolio statistics -->
+                        <div class="about-highlights">
+                            <div class="highlight">
+                                <strong>2</strong>
+                                <span>Technology Degrees</span>
+                            </div>
+
+                            <div class="highlight">
+                                <strong>2</strong>
+                                <span>CompTIA Certifications</span>
+                            </div>
+
+                            <div class="highlight">
+                                <strong>Multiple</strong>
+                                <span>Leadership Roles</span>
+                            </div>
                         </div>
-                        <d
+
+                        <!-- Personal LEGO fun fact -->
+                        <div class="fun-fact-card">
+                            <i
+                                class="uil uil-puzzle-piece"
+                                aria-hidden="true"
+                            ></i>
+
+                            <div>
+                                <h3>Fun Fact</h3>
+                                <p>
+                                    When I’m not working with data or
+                                    cybersecurity, I enjoy relaxing by building
+                                    LEGO sets.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Contact button -->
+                        <a href="#contact" class="btn">
+                            Contact Me
+                            <i
+                                class="uil uil-message"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- =============================================
+                 OPTIONAL GIF / VISUAL BREAK
+                 Replace the example GIF with your own file.
+                 Delete this entire section if you do not want
+                 an animated image between sections.
+            ============================================== -->
+            <div class="visual-break">
+                <img
+                    src="assets/gifs/coding-animation.gif"
+                    alt="Animated coding workspace"
+                    loading="lazy"
+                >
+            </div>
+
+
+            <!-- =============================================
+                 EDUCATION AND CERTIFICATIONS
+                 Displays academic degrees and certifications.
+            ============================================== -->
+            <section class="education section" id="education">
+                <div class="top-header">
+                    <h2>Education &amp; Certifications</h2>
+                    <span>
+                        My academic and professional development
+                    </span>
+                </div>
+
+                <div class="education-grid">
+
+                    <!-- Master's degree -->
+                    <article class="education-card">
+                        <i
+                            class="uil uil-graduation-cap"
+                            aria-hidden="true"
+                        ></i>
+
+                        <h3>Master of Science</h3>
+                        <h4>Data Science &amp; Analytics</h4>
+
+                        <p>
+                            Concentration in Artificial Intelligence and Machine
+                            Learning with additional study in cybersecurity and
+                            data-driven problem solving.
+                        </p>
+
+                        <span>
+                            Old Dominion University • 2026
+                        </span>
+                    </article>
+
+                    <!-- Bachelor's degree -->
+                    <article class="education-card">
+                        <i
+                            class="uil uil-graduation-cap"
+                            aria-hidden="true"
+                        ></i>
+
+                        <h3>Bachelor of Science</h3>
+                        <h4>Computer Science</h4>
+
+                        <p>
+                            Completed with a minor in Cybersecurity,
+                            Departmental Honors, and participation in the Perry
+                            Honors College.
+                        </p>
+
+                        <span>
+                            Old Dominion University • 2024
+                        </span>
+                    </article>
+
+                    <!-- Security+ certification -->
+                    <article class="education-card">
+                        <i class="uil uil-award" aria-hidden="true"></i>
+
+                        <h3>CompTIA Security+</h3>
+                        <h4>Cybersecurity Certification</h4>
+
+                        <p>
+                            Covers security operations, risk management,
+                            architecture, threats, vulnerabilities, and incident
+                            response.
+                        </p>
+                    </article>
+
+                    <!-- SecAI+ certification -->
+                    <article class="education-card">
+                        <i class="uil uil-award" aria-hidden="true"></i>
+
+                        <h3>CompTIA SecAI+</h3>
+                        <h4>AI Security Certification</h4>
+
+                        <p>
+                            Focuses on artificial intelligence security,
+                            governance, risk, compliance, and secure AI systems.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+
+            <!-- =============================================
+                 EXPERIENCE SECTION
+                 Each role expands when the visitor selects
+                 the View Details button.
+            ============================================== -->
+            <section class="experience section" id="experience">
+                <div class="top-header">
+                    <h2>Experience</h2>
+                    <span>
+                        My professional and leadership journey
+                    </span>
+                </div>
+
+                <div class="experience-container">
+
+                    <!-- SMART Scholar -->
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>SMART Scholar</h3>
+                                <h4>U.S. Department of Defense</h4>
+                            </div>
+
+                            <span class="experience-date">
+                                2024 – Present
+                            </span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="toggle-btn"
+                            aria-expanded="false"
+                        >
+                            View Details
+                            <i
+                                class="uil uil-angle-down"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+
+                        <div class="exp-details">
+                            <ul>
+                                <li>
+                                    Selected for the Department of Defense SMART
+                                    Scholarship program in support of advanced
+                                    technical education and federal service.
+                                </li>
+
+                                <li>
+                                    Completed graduate study in data science,
+                                    artificial intelligence, machine learning,
+                                    and cybersecurity.
+                                </li>
+
+                                <li>
+                                    Participated in professional development and
+                                    technical work supporting the Department of
+                                    Defense mission.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+
+                    <!-- NSWC Dahlgren internship -->
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>SMART Scholar Intern</h3>
+                                <h4>
+                                    Naval Surface Warfare Center Dahlgren
+                                    Division
+                                </h4>
+                            </div>
+
+                            <span class="experience-date">
+                                May 2025 – July 2025
+                            </span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="toggle-btn"
+                            aria-expanded="false"
+                        >
+                            View Details
+                            <i
+                                class="uil uil-angle-down"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+
+                        <div class="exp-details">
+                            <ul>
+                                <li>
+                                    Supported modeling and simulation testing,
+                                    system documentation, and technical
+                                    procedures.
+                                </li>
+
+                                <li>
+                                    Developed test procedures for the Modeling
+                                    Architecture for Systems and Tactics
+                                    environment.
+                                </li>
+
+                                <li>
+                                    Updated system requirements documentation
+                                    and created a Confluence guide to improve
+                                    access to internal technical information.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+
+                    <!-- Graduate Assistant -->
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Graduate Assistant</h3>
+                                <h4>
+                                    Old Dominion University Center for Career
+                                    and Leadership Development
+                                </h4>
+                            </div>
+
+                            <span class="experience-date">
+                                2025 – 2026
+                            </span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="toggle-btn"
+                            aria-expanded="false"
+                        >
+                            View Details
+                            <i
+                                class="uil uil-angle-down"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+
+                        <div class="exp-details">
+                            <ul>
+                                <li>
+                                    Supported Living-Learning Communities and
+                                    supervised student peer mentors from several
+                                    academic programs.
+                                </li>
+
+                                <li>
+                                    Coordinated student programming, leadership
+                                    activities, outreach efforts, and community
+                                    service projects.
+                                </li>
+
+                                <li>
+                                    Helped students connect their academic
+                                    experiences with career readiness and
+                                    leadership development.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+
+                    <!-- Student Ambassador -->
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Data Science Student Ambassador</h3>
+                                <h4>
+                                    Old Dominion University School of Data
+                                    Science
+                                </h4>
+                            </div>
+
+                            <span class="experience-date">
+                                2025 – 2026
+                            </span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="toggle-btn"
+                            aria-expanded="false"
+                        >
+                            View Details
+                            <i
+                                class="uil uil-angle-down"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+
+                        <div class="exp-details">
+                            <ul>
+                                <li>
+                                    Represented the School of Data Science
+                                    during student, academic, and community
+                                    events.
+                                </li>
+
+                                <li>
+                                    Shared information about data science
+                                    programs, student opportunities, and the
+                                    graduate student experience.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+
+                    <!-- Cybersecurity Clinic -->
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Cybersecurity Clinic Intern</h3>
+                                <h4>Old Dominion University</h4>
+                            </div>
+
+                            <!-- Replace these dates with the exact dates -->
+                            <span class="experience-date">
+                                Add Exact Dates
+                            </span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="toggle-btn"
+                            aria-expanded="false"
+                        >
+                            View Details
+                            <i
+                                class="uil uil-angle-down"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+
+                        <div class="exp-details">
+                            <ul>
+                                <li>
+                                    Assisted with cybersecurity assessments for
+                                    small businesses and community
+                                    organizations.
+                                </li>
+
+                                <li>
+                                    Reviewed security practices and helped
+                                    identify risks and areas for improvement.
+                                </li>
+
+                                <li>
+                                    Supported the development of clear,
+                                    practical cybersecurity recommendations.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+
+            <!-- =============================================
+                 SKILLS SECTION
+                 Groups technical and professional skills into
+                 easy-to-scan cards.
+            ============================================== -->
+            <section class="section" id="skills">
+                <div class="top-header">
+                    <h2>Skills</h2>
+                    <span>
+                        Technologies and strengths I bring to my work
+                    </span>
+                </div>
+
+                <div class="skills-container">
+
+                    <!-- Programming and software skills -->
+                    <article class="skills-card">
+                        <h3>Programming &amp; Development</h3>
+
+                        <div class="skills-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                        </div>
+                    </article>
+
+                    <!-- Data science skills -->
+                    <article class="skills-card">
+                        <h3>Data &amp; Artificial Intelligence</h3>
+
+                        <div class="skills-list">
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Artificial Intelligence</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">Data Visualization</span>
+                            <span class="skill-tag">Jupyter Notebook</span>
+                        </div>
+                    </article>
+
+                    <!-- Cybersecurity skills -->
+                    <article class="skills-card">
+                        <h3>Cybersecurity &amp; Systems</h3>
+
+                        <div class="skills-list">
+                            <span class="skill-tag">Risk Management</span>
+                            <span class="skill-tag">Security Assessments</span>
+                            <span class="skill-tag">NIST Frameworks</span>
+                            <span class="skill-tag">Security Operations</span>
+                            <span class="skill-tag">Technical Documentation</span>
+                            <span class="skill-tag">System Administration</span>
+                            <span class="skill-tag">Modeling &amp; Simulation</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+
+            <!-- =============================================
+                 PROJECTS SECTION
+                 Filter buttons show projects by category.
+                 The data attributes are used by JavaScript to
+                 open the project details modal.
+            ============================================== -->
+            <section class="projects section" id="projects">
+                <div class="top-header">
+                    <h2>Projects</h2>
+                    <span>
+                        A selection of my technical and creative work
+                    </span>
+                </div>
+
+                <!-- Project category filters -->
+                <div
+                    class="project-filters"
+                    aria-label="Filter projects by category"
+                >
+                    <button
+                        type="button"
+                        class="filter-btn active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="web"
+                    >
+                        Web
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="data"
+                    >
+                        Data
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="ml"
+                    >
+                        AI / ML
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="cyber"
+                    >
+                        Cybersecurity
+                    </button>
+                </div>
+
+                <div class="projects-container">
+
+                    <!-- Personal portfolio website -->
+                    <article
+                        class="project-card"
+                        data-category="web"
+                        data-title="Personal Portfolio Website"
+                        data-description="A responsive personal website built to showcase my education, experience, certifications, technical skills, and projects."
+                        data-link="https://github.com/mcros008"
+                        data-image="assets/images/projects/portfolio-project.jpg"
+                        tabindex="0"
+                    >
+                        <img
+                            src="assets/images/projects/portfolio-project.jpg"
+                            alt="Preview of Makendra's portfolio website"
+                            loading="lazy"
+                        >
+
+                        <h3>Personal Portfolio Website</h3>
+
+                        <p>
+                            Designed and developed a responsive portfolio using
+                            HTML, CSS, JavaScript, Typed.js, ScrollReveal, and
+                            particles.js.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                    </article>
+
+
+                    <!-- Data visualization project placeholder -->
+                    <article
+                        class="project-card"
+                        data-category="data"
+                        data-title="Power BI Data Dashboard"
+                        data-description="An interactive data visualization project created to explore trends, compare key metrics, and communicate findings clearly."
+                        data-link="#"
+                        data-image="assets/images/projects/powerbi-project.jpg"
+                        tabindex="0"
+                    >
+                        <img
+                            src="assets/images/projects/powerbi-project.jpg"
+                            alt="Preview of a Power BI dashboard project"
+                            loading="lazy"
+                        >
+
+                        <h3>Power BI Data Dashboard</h3>
+
+                        <p>
+                            Built an interactive dashboard that turns raw data
+                            into clear visual insights and performance metrics.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">Data Analysis</span>
+                            <span class="project-tag">Visualization</span>
+                        </div>
+                    </article>
+
+
+                    <!-- Machine learning project placeholder -->
+                    <article
+                        class="project-card"
+                        data-category="ml"
+                        data-title="Machine Learning Project"
+                        data-description="A machine learning project that includes data preparation, model development, evaluation, and interpretation of results."
+                        data-link="#"
+                        data-image="assets/images/projects/ml-project.jpg"
+                        tabindex="0"
+                    >
+                        <img
+                            src="assets/images/projects/ml-project.jpg"
+                            alt="Preview of a machine learning project"
+                            loading="lazy"
+                        >
+
+                        <h3>Machine Learning Project</h3>
+
+                        <p>
+                            Developed and evaluated a predictive model using
+                            Python and common machine learning tools.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Data Science</span>
+                        </div>
+                    </article>
+
+
+                    <!-- Cybersecurity project placeholder -->
+                    <article
+                        class="project-card"
+                        data-category="cyber"
+                        data-title="Cybersecurity Assessment Project"
+                        data-description="A security assessment project focused on identifying risks, reviewing security practices, and developing practical recommendations."
+                        data-link="#"
+                        data-image="assets/images/projects/cyber-project.jpg"
+                        tabindex="0"
+                    >
+                        <img
+                            src="assets/images/projects/cyber-project.jpg"
+                            alt="Preview of a cybersecurity assessment project"
+                            loading="lazy"
+                        >
+
+                        <h3>Cybersecurity Assessment</h3>
+
+                        <p>
+                            Reviewed security practices, identified potential
+                            risks, and developed recommendations for improvement.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">Cybersecurity</span>
+                            <span class="project-tag">Risk</span>
+                            <span class="project-tag">NIST</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+
+            <!-- =============================================
+                 CONTACT SECTION
+                 Gives visitors direct ways to connect.
+                 The right side uses a simple contact form.
+                 A form service is required for submissions.
+            ============================================== -->
+            <section class="section" id="contact">
+                <div class="top-header">
+                    <h2>Contact Me</h2>
+                    <span>
+                        Let’s connect and build something meaningful
+                    </span>
+                </div>
+
+                <div class="contact-container">
+
+                    <!-- Contact information -->
+                    <div class="contact-info">
+                        <h2>Let’s Work Together</h2>
+
+                        <p>
+                            <i
+                                class="uil uil-envelope"
+                                aria-hidden="true"
+                            ></i>
+
+                            <a href="mailto:makendracrosby100@gmail.com">
+                                makendracrosby100@gmail.com
+                            </a>
+                        </p>
+
+                        <p>
+                            <i
+                                class="uil uil-linkedin-alt"
+                                aria-hidden="true"
+                            ></i>
+
+                            <a
+                                href="https://www.linkedin.com/in/makendracrosby"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                LinkedIn
+                            </a>
+                        </p>
+
+                        <p>
+                            <i
+                                class="uil uil-github-alt"
+                                aria-hidden="true"
+                            ></i>
+
+                            <a
+                                href="https://github.com/mcros008"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                GitHub
+                            </a>
+                        </p>
+                    </div>
+
+                    <!--
+                        CONTACT FORM NOTE:
+                        This form will not send messages until you connect it
+                        to a service such as Formspree, Netlify Forms, or your
+                        own backend. Replace the action value when ready.
+                    -->
+                    <form
+                        class="contact-form"
+                        action="#"
+                        method="post"
+                    >
+                        <div class="form-inputs">
+                            <label style="width: 100%;">
+                                <span
+                                    style="
+                                        position: absolute;
+                                        width: 1px;
+                                        height: 1px;
+                                        padding: 0;
+                                        margin: -1px;
+                                        overflow: hidden;
+                                        clip: rect(0, 0, 0, 0);
+                                        white-space: nowrap;
+                                        border: 0;
+                                    "
+                                >
+                                    Name
+                                </span>
+
+                                <input
+                                    type="text"
+                                    name="name"
+                                    class="input-field"
+                                    placeholder="Your name"
+                                    required
+                                >
+                            </label>
+
+                            <label style="width: 100%;">
+                                <span
+                                    style="
+                                        position: absolute;
+                                        width: 1px;
+                                        height: 1px;
+                                        padding: 0;
+                                        margin: -1px;
+                                        overflow: hidden;
+                                        clip: rect(0, 0, 0, 0);
+                                        white-space: nowrap;
+                                        border: 0;
+                                    "
+                                >
+                                    Email
+                                </span>
+
+                                <input
+                                    type="email"
+                                    name="email"
+                                    class="input-field"
+                                    placeholder="Your email"
+                                    required
+                                >
+                            </label>
+                        </div>
+
+                        <label>
+                            <span
+                                style="
+                                    position: absolute;
+                                    width: 1px;
+                                    height: 1px;
+                                    padding: 0;
+                                    margin: -1px;
+                                    overflow: hidden;
+                                    clip: rect(0, 0, 0, 0);
+                                    white-space: nowrap;
+                                    border: 0;
+                                "
+                            >
+                                Message
+                            </span>
+
+                            <textarea
+                                name="message"
+                                placeholder="Your message"
+                                required
+                            ></textarea>
+                        </label>
+
+                        <button type="submit" class="btn">
+                            Send Message
+                            <i
+                                class="uil uil-message"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+
+        <!-- =================================================
+             PROJECT MODAL
+             JavaScript fills this pop-up with the selected
+             project's title, description, image, and link.
+        ================================================== -->
+        <div
+            id="project-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-hidden="true"
+            aria-labelledby="modal-title"
+        >
+            <div class="modal-content">
+
+                <!-- Closes the project modal -->
+                <button
+                    type="button"
+                    class="close"
+                    aria-label="Close project details"
+                >
+                    &times;
+                </button>
+
+                <!-- Project image is inserted by JavaScript -->
+                <img
+                    id="modal-image"
+                    src=""
+                    alt=""
+                    style="display: none;"
+                >
+
+                <!-- Project title is inserted by JavaScript -->
+                <h2 id="modal-title">Project Title</h2>
+
+                <!-- Project description is inserted by JavaScript -->
+                <p id="modal-description">
+                    Project details will appear here.
+                </p>
+
+                <!-- Project link is updated by JavaScript -->
+                <a
+                    id="modal-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn"
+                >
+                    View Project
+                    <i
+                        class="uil uil-external-link-alt"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- =================================================
+             BACK TO TOP BUTTON
+             Appears after the visitor scrolls down the page.
+        ================================================== -->
+        <button
+            id="back-to-top"
+            type="button"
+            aria-label="Back to top"
+        >
+            <i class="uil uil-arrow-up" aria-hidden="true"></i>
+        </button>
+
+
+        <!-- =================================================
+             FOOTER
+             Includes navigation, social links, and copyright.
+        ================================================== -->
+        <footer>
+            <div class="top-footer">
+                <p>Makendra Crosby</p>
+            </div>
+
+            <!-- Footer navigation -->
+            <div class="middle-footer">
+                <ul class="footer-menu">
+                    <li class="footer_menu_list">
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li class="footer_menu_list">
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li class="footer_menu_list">
+                        <a href="#experience">Experience</a>
+                    </li>
+
+                    <li class="footer_menu_list">
+                        <a href="#projects">Projects</a>
+                    </li>
+
+                    <li class="footer_menu_list">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Footer social media links -->
+            <div class="footer-social-icons">
+                <a
+                    href="https://www.linkedin.com/in/makendracrosby"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="icon"
+                    aria-label="LinkedIn"
+                >
+                    <i
+                        class="uil uil-linkedin-alt"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+
+                <a
+                    href="https://github.com/mcros008"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="icon"
+                    aria-label="GitHub"
+                >
+                    <i
+                        class="uil uil-github-alt"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+
+                <a
+                    href="mailto:makendracrosby100@gmail.com"
+                    class="icon"
+                    aria-label="Email"
+                >
+                    <i
+                        class="uil uil-envelope"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+            </div>
+
+            <!-- JavaScript automatically inserts the current year -->
+            <div class="bottom-footer">
+                <p>
+                    Copyright &copy;
+                    <span class="current-year"></span>
+                    Makendra Crosby. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT LIBRARIES
+         These must remain at the bottom of the page and load
+         before the custom main.js file.
+    ====================================================== -->
+
+    <!-- Creates the rotating greeting and role text -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Creates section reveal animations while scrolling -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Creates the animated particles in the hero section -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Loads all custom website interactions -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
