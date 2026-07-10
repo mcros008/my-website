@@ -12,19 +12,6 @@ function myMenuFunction() {
     navMenu.classList.toggle("responsive");
 }
 
-const navLinks = document.querySelectorAll(".nav-link");
-
-navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-        const navMenu = document.getElementById("myNavMenu");
-
-        if (navMenu) {
-            navMenu.classList.remove("responsive");
-        }
-    });
-});
-
-
 /* =====================================================
    NAVIGATION SHADOW
 ===================================================== */
@@ -34,17 +21,14 @@ function headerShadow() {
 
     if (!navHeader) return;
 
-    if (window.scrollY > 50) {
-        navHeader.classList.add("scrolled");
-        navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
-    } else {
-        navHeader.classList.remove("scrolled");
-        navHeader.style.boxShadow = "none";
-    }
+    const isScrolled = window.scrollY > 50;
+
+    navHeader.classList.toggle("scrolled", isScrolled);
+
+    navHeader.style.boxShadow = isScrolled
+        ? "0 1px 6px rgba(0, 0, 0, 0.1)"
+        : "none";
 }
-
-window.addEventListener("scroll", headerShadow);
-
 
 /* =====================================================
    TYPING EFFECTS
@@ -53,15 +37,14 @@ window.addEventListener("scroll", headerShadow);
 function initializeTypingEffects() {
     if (typeof Typed === "undefined") return;
 
-    const typedGreeting = document.querySelector(".typedGreeting");
-    const typedRole = document.querySelector(".typedRole");
-    const typedText = document.querySelector(".typedText");
+    const typedGreeting =
+        document.querySelector(".typedGreeting");
 
-    /*
-       Use this when your HTML contains:
+    const typedRole =
+        document.querySelector(".typedRole");
 
-       <span class="typedGreeting"></span>
-    */
+    const typedText =
+        document.querySelector(".typedText");
 
     if (typedGreeting) {
         new Typed(".typedGreeting", {
@@ -79,12 +62,6 @@ function initializeTypingEffects() {
         });
     }
 
-    /*
-       Use this when your HTML contains:
-
-       <span class="typedRole"></span>
-    */
-
     if (typedRole) {
         new Typed(".typedRole", {
             strings: [
@@ -99,11 +76,6 @@ function initializeTypingEffects() {
             cursorChar: "|"
         });
     }
-
-    /*
-       This keeps your original typedText class working
-       until you update the HTML.
-    */
 
     if (typedText && !typedGreeting) {
         new Typed(".typedText", {
@@ -123,7 +95,6 @@ function initializeTypingEffects() {
     }
 }
 
-
 /* =====================================================
    SCROLL REVEAL ANIMATIONS
 ===================================================== */
@@ -140,6 +111,7 @@ function initializeScrollReveal() {
     });
 
     scrollReveal.reveal(".featured-text-card");
+
     scrollReveal.reveal(".featured-name", {
         delay: 150
     });
@@ -166,6 +138,7 @@ function initializeScrollReveal() {
     });
 
     scrollReveal.reveal(".top-header");
+
     scrollReveal.reveal(".about-image", {
         delay: 150,
         origin: "left"
@@ -188,7 +161,7 @@ function initializeScrollReveal() {
         delay: 200
     });
 
-    scrollReveal.reveal(".experience-item", {
+    scrollReveal.reveal(".experience-card", {
         interval: 150
     });
 
@@ -213,50 +186,86 @@ function initializeScrollReveal() {
     });
 }
 
-
 /* =====================================================
-   ACTIVE NAVIGATION LINK
+   ACTIVE NAVIGATION LINKS
 ===================================================== */
 
-const sections = document.querySelectorAll("section[id]");
+function initializeNavigation() {
+    const navLinks =
+        document.querySelectorAll(".nav-link");
 
-function scrollActive() {
-    const scrollY = window.scrollY;
+    const sections =
+        document.querySelectorAll("section[id]");
 
-    sections.forEach((section) => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 140;
-        const sectionId = section.getAttribute("id");
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            const navMenu =
+                document.getElementById("myNavMenu");
 
-        const currentLink = document.querySelector(
-            `.nav-menu a[href="#${sectionId}"]`
-        );
-
-        if (!currentLink) return;
-
-        const sectionBottom = sectionTop + sectionHeight;
-
-        if (scrollY >= sectionTop && scrollY < sectionBottom) {
-            navLinks.forEach((link) => {
-                link.classList.remove("active-link");
-            });
-
-            currentLink.classList.add("active-link");
-        }
+            if (navMenu) {
+                navMenu.classList.remove("responsive");
+            }
+        });
     });
+
+    function scrollActive() {
+        const scrollY = window.scrollY;
+
+        sections.forEach((section) => {
+            const sectionTop =
+                section.offsetTop - 140;
+
+            const sectionBottom =
+                sectionTop + section.offsetHeight;
+
+            const sectionId =
+                section.getAttribute("id");
+
+            const currentLink =
+                document.querySelector(
+                    `.nav-menu a[href="#${sectionId}"]`
+                );
+
+            if (!currentLink) return;
+
+            if (
+                scrollY >= sectionTop &&
+                scrollY < sectionBottom
+            ) {
+                navLinks.forEach((link) => {
+                    link.classList.remove("active-link");
+                });
+
+                currentLink.classList.add(
+                    "active-link"
+                );
+            }
+        });
+    }
+
+    window.addEventListener(
+        "scroll",
+        scrollActive,
+        {
+            passive: true
+        }
+    );
+
+    scrollActive();
 }
-
-window.addEventListener("scroll", scrollActive);
-
 
 /* =====================================================
    PARTICLES CONFIGURATION
 ===================================================== */
 
 function initializeParticles() {
-    const particlesContainer = document.getElementById("particles-js");
+    const particlesContainer =
+        document.getElementById("particles-js");
 
-    if (!particlesContainer || typeof particlesJS === "undefined") {
+    if (
+        !particlesContainer ||
+        typeof particlesJS === "undefined"
+    ) {
         return;
     }
 
@@ -340,136 +349,104 @@ function initializeParticles() {
     });
 }
 
-
 /* =====================================================
    PROJECT FILTERING
+
+   Your project filter buttons should use:
+
+   class="project-filter-btn"
+
+   The old class="filter-btn" will also work if the
+   buttons are inside .project-filters.
 ===================================================== */
 
 function initializeProjectFilters() {
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const projectCards = document.querySelectorAll(".project-card");
+    const projectsSection =
+        document.getElementById("projects");
 
-    if (!filterButtons.length || !projectCards.length) return;
+    const filterContainer =
+        projectsSection?.querySelector(
+            ".project-filters"
+        ) ||
+        document.querySelector(
+            ".project-filters"
+        );
+
+    const scope =
+        projectsSection || filterContainer;
+
+    if (!scope) return;
+
+    const filterButtons =
+        scope.querySelectorAll(
+            ".project-filter-btn, .project-filters .filter-btn"
+        );
+
+    const projectCards =
+        scope.querySelectorAll(".project-card");
+
+    if (
+        !filterButtons.length ||
+        !projectCards.length
+    ) {
+        return;
+    }
 
     filterButtons.forEach((button) => {
         button.addEventListener("click", () => {
-            filterButtons.forEach((filterButton) => {
-                filterButton.classList.remove("active");
-            });
+            const selectedFilter =
+                button.dataset.filter || "all";
+
+            filterButtons.forEach(
+                (filterButton) => {
+                    filterButton.classList.remove(
+                        "active"
+                    );
+
+                    filterButton.setAttribute(
+                        "aria-pressed",
+                        "false"
+                    );
+                }
+            );
 
             button.classList.add("active");
 
-            const selectedFilter = button.dataset.filter;
+            button.setAttribute(
+                "aria-pressed",
+                "true"
+            );
 
             projectCards.forEach((card) => {
-                const projectCategory = card.dataset.category;
+                const projectCategory =
+                    card.dataset.category || "";
+
+                const categories =
+                    projectCategory.split(/\s+/);
 
                 const shouldShow =
                     selectedFilter === "all" ||
-                    projectCategory === selectedFilter;
+                    categories.includes(
+                        selectedFilter
+                    );
 
-                card.classList.toggle("project-hidden", !shouldShow);
+                card.classList.toggle(
+                    "project-hidden",
+                    !shouldShow
+                );
 
-                if (shouldShow) {
-                    card.setAttribute("aria-hidden", "false");
-                } else {
-                    card.setAttribute("aria-hidden", "true");
-                }
+                card.setAttribute(
+                    "aria-hidden",
+                    String(!shouldShow)
+                );
             });
         });
     });
 }
 
-
 /* =====================================================
-   EXPERIENCE ACCORDION
+   EXPERIENCE DATA
 ===================================================== */
-
-function initializeExperienceAccordion() {
-    const experienceItems = document.querySelectorAll(".experience-item");
-
-    experienceItems.forEach((item) => {
-        const title = item.querySelector(".exp-title");
-        const button = item.querySelector(".toggle-btn");
-        const details = item.querySelector(".exp-details");
-
-        if (!details) return;
-
-        details.style.display = "none";
-
-        const clickableElement = button || title;
-
-        if (!clickableElement) return;
-
-        clickableElement.setAttribute("aria-expanded", "false");
-
-        function toggleExperience() {
-            const isOpen = item.classList.toggle("open");
-
-            clickableElement.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-            if (title && title !== clickableElement) {
-                title.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
-            }
-
-            details.style.display = isOpen ? "block" : "none";
-
-            if (button) {
-                const icon = button.querySelector("i");
-
-                if (icon) {
-                    icon.className = isOpen
-                        ? "uil uil-angle-up"
-                        : "uil uil-angle-down";
-                } else {
-                    button.textContent = isOpen ? "−" : "+";
-                }
-            }
-        }
-
-        clickableElement.addEventListener(
-            "click",
-            toggleExperience
-        );
-
-        if (title && title !== clickableElement) {
-            title.setAttribute("tabindex", "0");
-            title.setAttribute("role", "button");
-            title.setAttribute("aria-expanded", "false");
-
-            title.addEventListener("click", toggleExperience);
-
-            title.addEventListener("keydown", (event) => {
-                if (
-                    event.key === "Enter" ||
-                    event.key === " "
-                ) {
-                    event.preventDefault();
-                    toggleExperience();
-                }
-            });
-        }
-
-        clickableElement.addEventListener(
-            "keydown",
-            (event) => {
-                if (
-                    event.key === "Enter" ||
-                    event.key === " "
-                ) {
-                    event.preventDefault();
-                    toggleExperience();
-                }
-            }
-        );
-    });
-}
 
 const experiences = [
     {
@@ -479,7 +456,12 @@ const experiences = [
         date: "2026 – Present",
         description:
             "Supporting technical work related to data science, cybersecurity, artificial intelligence, testing, and evaluation for Navy systems.",
-        skills: ["Data Science", "Cybersecurity", "AI", "Testing"]
+        skills: [
+            "Data Science",
+            "Cybersecurity",
+            "AI",
+            "Testing"
+        ]
     },
     {
         title: "Graduate Assistant",
@@ -488,43 +470,68 @@ const experiences = [
         date: "August 2025 – May 2026",
         description:
             "Supported Living-Learning Communities, supervised peer mentors, organized programs, and helped students connect with campus resources.",
-        skills: ["Program Support", "Mentoring", "Communication"]
+        skills: [
+            "Program Support",
+            "Mentoring",
+            "Communication"
+        ]
     },
     {
         title: "SMART Scholar Intern",
-        organization: "NSWCDD Dahlgren Division",
+        organization:
+            "NSWCDD Dahlgren Division",
         category: "work",
         date: "May 2025 – July 2025",
         description:
             "Created testing procedures, updated system requirement documents, and developed technical guidance for internal teams.",
-        skills: ["Testing", "Documentation", "Systems Engineering"]
+        skills: [
+            "Testing",
+            "Documentation",
+            "Systems Engineering"
+        ]
     },
     {
-        title: "Data Science Student Ambassador",
-        organization: "Old Dominion University",
+        title:
+            "Data Science Student Ambassador",
+        organization:
+            "Old Dominion University",
         category: "leadership",
         date: "2025 – 2026",
         description:
             "Represented the School of Data Science and helped promote its academic programs, events, and student opportunities.",
-        skills: ["Public Speaking", "Outreach", "Leadership"]
+        skills: [
+            "Public Speaking",
+            "Outreach",
+            "Leadership"
+        ]
     },
     {
         title: "Corresponding Secretary",
-        organization: "Alpha Kappa Alpha Sorority, Incorporated",
+        organization:
+            "Alpha Kappa Alpha Sorority, Incorporated",
         category: "leadership",
         date: "2023 – 2024",
         description:
             "Managed chapter communication, correspondence, meeting information, and organizational records.",
-        skills: ["Communication", "Organization", "Administration"]
+        skills: [
+            "Communication",
+            "Organization",
+            "Administration"
+        ]
     },
     {
-        title: "Community Outreach Director",
+        title:
+            "Community Outreach Director",
         organization: "Phi Sigma Rho",
         category: "leadership",
         date: "2026",
         description:
             "Coordinated service opportunities and community-focused programs for members of the organization.",
-        skills: ["Community Outreach", "Planning", "Teamwork"]
+        skills: [
+            "Community Outreach",
+            "Planning",
+            "Teamwork"
+        ]
     },
     {
         title: "Co-Recruitment Chair",
@@ -533,16 +540,25 @@ const experiences = [
         date: "2026",
         description:
             "Helped plan recruitment activities and create an engaging experience for prospective members.",
-        skills: ["Recruitment", "Event Planning", "Collaboration"]
+        skills: [
+            "Recruitment",
+            "Event Planning",
+            "Collaboration"
+        ]
     },
     {
         title: "Volunteer",
-        organization: "Monarch Clothing Closet",
+        organization:
+            "Monarch Clothing Closet",
         category: "volunteer",
         date: "April 2025 – Present",
         description:
             "Help students access professional and everyday clothing through organization, inventory support, and direct assistance.",
-        skills: ["Service", "Organization", "Student Support"]
+        skills: [
+            "Service",
+            "Organization",
+            "Student Support"
+        ]
     },
     {
         title: "Volunteer",
@@ -551,165 +567,45 @@ const experiences = [
         date: "October 2023 – Present",
         description:
             "Assist with organizing food and supplies that support students experiencing food insecurity.",
-        skills: ["Community Service", "Inventory", "Teamwork"]
+        skills: [
+            "Community Service",
+            "Inventory",
+            "Teamwork"
+        ]
     },
     {
         title: "Cybersecurity Mentor",
         organization: "CTEWorkforce",
         category: "volunteer",
-        date: "November 2023 – January 2024",
+        date:
+            "November 2023 – January 2024",
         description:
             "Provided guidance and encouragement to students interested in cybersecurity education and career paths.",
-        skills: ["Cybersecurity", "Mentoring", "Career Guidance"]
+        skills: [
+            "Cybersecurity",
+            "Mentoring",
+            "Career Guidance"
+        ]
     },
     {
         title: "Summer Student Counselor",
-        organization: "Old Dominion University",
+        organization:
+            "Old Dominion University",
         category: "volunteer",
         date: "August 2023",
         description:
             "Helped incoming students navigate campus resources and adjust to the university environment.",
-        skills: ["Student Support", "Communication", "Campus Engagement"]
+        skills: [
+            "Student Support",
+            "Communication",
+            "Campus Engagement"
+        ]
     }
 ];
 
-const experienceGrid = document.getElementById("experienceGrid");
-const filterButtons = document.querySelectorAll(".filter-btn");
-const pageNumbers = document.getElementById("pageNumbers");
-const previousPageButton = document.getElementById("previousPage");
-const nextPageButton = document.getElementById("nextPage");
-const pageStatus = document.getElementById("pageStatus");
-
-const itemsPerPage = 6;
-
-let activeFilter = "all";
-let currentPage = 1;
-
-function getFilteredExperiences() {
-    if (activeFilter === "all") {
-        return experiences;
-    }
-
-    return experiences.filter(
-        (experience) => experience.category === activeFilter
-    );
-}
-
-function createExperienceCard(experience) {
-    const card = document.createElement("article");
-    card.classList.add("experience-card");
-
-    const skillsHTML = experience.skills
-        .map(
-            (skill) =>
-                `<span class="experience-skill">${escapeHTML(skill)}</span>`
-        )
-        .join("");
-
-    card.innerHTML = `
-        <div class="experience-card-header">
-            <div>
-                <h3>${escapeHTML(experience.title)}</h3>
-                <p class="experience-company">
-                    ${escapeHTML(experience.organization)}
-                </p>
-            </div>
-
-            <span class="experience-type">
-                ${escapeHTML(experience.category)}
-            </span>
-        </div>
-
-        <p class="experience-date">${escapeHTML(experience.date)}</p>
-
-        <p class="experience-description">
-            ${escapeHTML(experience.description)}
-        </p>
-
-        <div class="experience-skills">
-            ${skillsHTML}
-        </div>
-    `;
-
-    return card;
-}
-
-function renderExperiences() {
-    const filteredExperiences = getFilteredExperiences();
-    const totalPages = Math.ceil(filteredExperiences.length / itemsPerPage);
-
-    if (currentPage > totalPages && totalPages > 0) {
-        currentPage = totalPages;
-    }
-
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentExperiences = filteredExperiences.slice(startIndex, endIndex);
-
-    experienceGrid.innerHTML = "";
-
-    if (currentExperiences.length === 0) {
-        experienceGrid.innerHTML = `
-            <p class="no-results">No experience found in this category.</p>
-        `;
-    } else {
-        currentExperiences.forEach((experience) => {
-            experienceGrid.appendChild(createExperienceCard(experience));
-        });
-    }
-
-    renderPagination(totalPages, filteredExperiences.length);
-}
-
-function renderPagination(totalPages, totalItems) {
-    pageNumbers.innerHTML = "";
-
-    for (let page = 1; page <= totalPages; page++) {
-        const pageButton = document.createElement("button");
-
-        pageButton.type = "button";
-        pageButton.textContent = page;
-        pageButton.classList.add("page-btn");
-        pageButton.setAttribute("aria-label", `Go to page ${page}`);
-
-        if (page === currentPage) {
-            pageButton.classList.add("active");
-            pageButton.setAttribute("aria-current", "page");
-        }
-
-        pageButton.addEventListener("click", () => {
-            currentPage = page;
-            renderExperiences();
-            scrollToExperienceTop();
-        });
-
-        pageNumbers.appendChild(pageButton);
-    }
-
-    previousPageButton.disabled = currentPage === 1;
-    nextPageButton.disabled =
-        currentPage === totalPages || totalPages === 0;
-
-    if (totalPages <= 1) {
-        document.getElementById("pagination").style.display = "none";
-    } else {
-        document.getElementById("pagination").style.display = "flex";
-    }
-
-    pageStatus.textContent =
-        totalItems > 0
-            ? `Page ${currentPage} of ${totalPages} • ${totalItems} experience ${
-                  totalItems === 1 ? "entry" : "entries"
-              }`
-            : "";
-}
-
-function scrollToExperienceTop() {
-    document.getElementById("experience").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-}
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
 
 function escapeHTML(value) {
     return String(value)
@@ -720,182 +616,670 @@ function escapeHTML(value) {
         .replaceAll("'", "&#039;");
 }
 
-filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        filterButtons.forEach((filterButton) => {
-            filterButton.classList.remove("active");
+/* =====================================================
+   EXPERIENCE FILTERING AND PAGINATION
+===================================================== */
+
+function initializeExperienceSection() {
+    const experienceSection =
+        document.getElementById("experience");
+
+    const experienceGrid =
+        document.getElementById(
+            "experienceGrid"
+        );
+
+    const pagination =
+        document.getElementById("pagination");
+
+    const pageNumbers =
+        document.getElementById(
+            "pageNumbers"
+        );
+
+    const previousPageButton =
+        document.getElementById(
+            "previousPage"
+        );
+
+    const nextPageButton =
+        document.getElementById(
+            "nextPage"
+        );
+
+    const pageStatus =
+        document.getElementById(
+            "pageStatus"
+        );
+
+    if (
+        !experienceSection ||
+        !experienceGrid ||
+        !pagination ||
+        !pageNumbers ||
+        !previousPageButton ||
+        !nextPageButton ||
+        !pageStatus
+    ) {
+        console.warn(
+            "Experience section not initialized because one or more required HTML elements are missing."
+        );
+
+        return;
+    }
+
+    const filterButtons =
+        experienceSection.querySelectorAll(
+            ".experience-filter-btn, .experience-filters .filter-btn"
+        );
+
+    /*
+       Change this number if you want more or fewer
+       experience cards on each page.
+    */
+
+    const itemsPerPage = 4;
+
+    let activeFilter = "all";
+    let currentPage = 1;
+
+    function getFilteredExperiences() {
+        if (activeFilter === "all") {
+            return experiences;
+        }
+
+        return experiences.filter(
+            (experience) =>
+                experience.category ===
+                activeFilter
+        );
+    }
+
+    function createExperienceCard(
+        experience
+    ) {
+        const card =
+            document.createElement("article");
+
+        card.className =
+            "experience-card";
+
+        card.dataset.category =
+            experience.category;
+
+        const skillsHTML =
+            experience.skills
+                .map(
+                    (skill) =>
+                        `<span class="experience-skill">${escapeHTML(
+                            skill
+                        )}</span>`
+                )
+                .join("");
+
+        card.innerHTML = `
+            <div class="experience-card-header">
+                <div>
+                    <h3>
+                        ${escapeHTML(
+                            experience.title
+                        )}
+                    </h3>
+
+                    <p class="experience-company">
+                        ${escapeHTML(
+                            experience.organization
+                        )}
+                    </p>
+                </div>
+
+                <span class="experience-type">
+                    ${escapeHTML(
+                        experience.category
+                    )}
+                </span>
+            </div>
+
+            <p class="experience-date">
+                ${escapeHTML(
+                    experience.date
+                )}
+            </p>
+
+            <p class="experience-description">
+                ${escapeHTML(
+                    experience.description
+                )}
+            </p>
+
+            <div class="experience-skills">
+                ${skillsHTML}
+            </div>
+        `;
+
+        return card;
+    }
+
+    function scrollToExperienceTop() {
+        experienceSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
         });
+    }
 
-        button.classList.add("active");
-        activeFilter = button.dataset.filter;
-        currentPage = 1;
+    function renderPagination(
+        totalPages,
+        totalItems
+    ) {
+        pageNumbers.innerHTML = "";
 
-        renderExperiences();
+        for (
+            let page = 1;
+            page <= totalPages;
+            page += 1
+        ) {
+            const pageButton =
+                document.createElement(
+                    "button"
+                );
+
+            pageButton.type = "button";
+
+            pageButton.textContent =
+                page;
+
+            pageButton.className =
+                "page-btn";
+
+            pageButton.setAttribute(
+                "aria-label",
+                `Go to page ${page}`
+            );
+
+            if (page === currentPage) {
+                pageButton.classList.add(
+                    "active"
+                );
+
+                pageButton.setAttribute(
+                    "aria-current",
+                    "page"
+                );
+            }
+
+            pageButton.addEventListener(
+                "click",
+                () => {
+                    currentPage = page;
+
+                    renderExperiences();
+
+                    scrollToExperienceTop();
+                }
+            );
+
+            pageNumbers.appendChild(
+                pageButton
+            );
+        }
+
+        previousPageButton.disabled =
+            currentPage <= 1;
+
+        nextPageButton.disabled =
+            totalPages === 0 ||
+            currentPage >= totalPages;
+
+        pagination.style.display =
+            totalPages > 1
+                ? "flex"
+                : "none";
+
+        if (totalItems > 0) {
+            const entryText =
+                totalItems === 1
+                    ? "entry"
+                    : "entries";
+
+            pageStatus.textContent =
+                `Page ${currentPage} of ${totalPages} • ` +
+                `${totalItems} experience ${entryText}`;
+        } else {
+            pageStatus.textContent = "";
+        }
+    }
+
+    function renderExperiences() {
+        const filteredExperiences =
+            getFilteredExperiences();
+
+        const totalItems =
+            filteredExperiences.length;
+
+        const totalPages =
+            Math.ceil(
+                totalItems /
+                    itemsPerPage
+            );
+
+        if (totalPages === 0) {
+            currentPage = 1;
+        } else if (
+            currentPage > totalPages
+        ) {
+            currentPage = totalPages;
+        }
+
+        const startIndex =
+            (currentPage - 1) *
+            itemsPerPage;
+
+        const currentExperiences =
+            filteredExperiences.slice(
+                startIndex,
+                startIndex +
+                    itemsPerPage
+            );
+
+        experienceGrid.innerHTML = "";
+
+        if (
+            currentExperiences.length === 0
+        ) {
+            experienceGrid.innerHTML = `
+                <p class="no-results">
+                    No experience found in this category.
+                </p>
+            `;
+        } else {
+            currentExperiences.forEach(
+                (experience) => {
+                    const card =
+                        createExperienceCard(
+                            experience
+                        );
+
+                    experienceGrid.appendChild(
+                        card
+                    );
+                }
+            );
+        }
+
+        renderPagination(
+            totalPages,
+            totalItems
+        );
+    }
+
+    filterButtons.forEach((button) => {
+        button.addEventListener(
+            "click",
+            () => {
+                const selectedFilter =
+                    button.dataset.filter;
+
+                if (!selectedFilter) {
+                    return;
+                }
+
+                filterButtons.forEach(
+                    (filterButton) => {
+                        filterButton.classList.remove(
+                            "active"
+                        );
+
+                        filterButton.setAttribute(
+                            "aria-pressed",
+                            "false"
+                        );
+                    }
+                );
+
+                button.classList.add(
+                    "active"
+                );
+
+                button.setAttribute(
+                    "aria-pressed",
+                    "true"
+                );
+
+                activeFilter =
+                    selectedFilter;
+
+                currentPage = 1;
+
+                renderExperiences();
+            }
+        );
     });
-});
 
-previousPageButton.addEventListener("click", () => {
-    if (currentPage > 1) {
-        currentPage--;
-        renderExperiences();
-        scrollToExperienceTop();
+    previousPageButton.addEventListener(
+        "click",
+        () => {
+            if (currentPage <= 1) {
+                return;
+            }
+
+            currentPage -= 1;
+
+            renderExperiences();
+
+            scrollToExperienceTop();
+        }
+    );
+
+    nextPageButton.addEventListener(
+        "click",
+        () => {
+            const totalPages =
+                Math.ceil(
+                    getFilteredExperiences()
+                        .length /
+                        itemsPerPage
+                );
+
+            if (
+                currentPage >= totalPages
+            ) {
+                return;
+            }
+
+            currentPage += 1;
+
+            renderExperiences();
+
+            scrollToExperienceTop();
+        }
+    );
+
+    const allButton =
+        Array.from(
+            filterButtons
+        ).find(
+            (button) =>
+                button.dataset.filter ===
+                "all"
+        );
+
+    if (allButton) {
+        allButton.classList.add(
+            "active"
+        );
+
+        allButton.setAttribute(
+            "aria-pressed",
+            "true"
+        );
     }
-});
 
-nextPageButton.addEventListener("click", () => {
-    const filteredExperiences = getFilteredExperiences();
-    const totalPages = Math.ceil(filteredExperiences.length / itemsPerPage);
-
-    if (currentPage < totalPages) {
-        currentPage++;
-        renderExperiences();
-        scrollToExperienceTop();
-    }
-});
-
-renderExperiences();
-
-const itemsPerPage = 6;
+    renderExperiences();
+}
 
 /* =====================================================
    PROJECT MODAL
 ===================================================== */
 
 function initializeProjectModal() {
-    const modal = document.getElementById("project-modal");
-    const closeButton = document.querySelector(
-        "#project-modal .close"
-    );
+    const modal =
+        document.getElementById(
+            "project-modal"
+        );
 
-    const projectBoxes = document.querySelectorAll(
-        "[data-title][data-description]"
-    );
+    const closeButton =
+        document.querySelector(
+            "#project-modal .close"
+        );
 
-    if (!modal || !projectBoxes.length) return;
+    const projectBoxes =
+        document.querySelectorAll(
+            ".project-card[data-title][data-description]"
+        );
 
-    const modalTitle = document.getElementById("modal-title");
+    if (
+        !modal ||
+        !projectBoxes.length
+    ) {
+        return;
+    }
+
+    const modalTitle =
+        document.getElementById(
+            "modal-title"
+        );
+
     const modalDescription =
-        document.getElementById("modal-description");
+        document.getElementById(
+            "modal-description"
+        );
 
-    const modalLink = document.getElementById("modal-link");
-    const modalImage = document.getElementById("modal-image");
+    const modalLink =
+        document.getElementById(
+            "modal-link"
+        );
+
+    const modalImage =
+        document.getElementById(
+            "modal-image"
+        );
+
+    let lastFocusedElement = null;
 
     function openModal(projectBox) {
-        const title = projectBox.dataset.title || "Project";
+        const title =
+            projectBox.dataset.title ||
+            "Project";
+
         const description =
             projectBox.dataset.description ||
             "Project details coming soon.";
 
-        const link = projectBox.dataset.link || "#";
-        const image = projectBox.dataset.image || "";
+        const link =
+            projectBox.dataset.link || "#";
+
+        const image =
+            projectBox.dataset.image || "";
+
+        lastFocusedElement =
+            document.activeElement;
 
         if (modalTitle) {
-            modalTitle.textContent = title;
+            modalTitle.textContent =
+                title;
         }
 
         if (modalDescription) {
-            modalDescription.textContent = description;
+            modalDescription.textContent =
+                description;
         }
 
         if (modalLink) {
             modalLink.href = link;
 
-            if (link === "#") {
-                modalLink.style.display = "none";
-            } else {
-                modalLink.style.display = "inline-flex";
-            }
+            modalLink.style.display =
+                link === "#"
+                    ? "none"
+                    : "inline-flex";
         }
 
         if (modalImage) {
+            modalImage.style.display =
+                image
+                    ? "block"
+                    : "none";
+
             if (image) {
                 modalImage.src = image;
-                modalImage.alt = `${title} project preview`;
-                modalImage.style.display = "block";
-            } else {
-                modalImage.style.display = "none";
+
+                modalImage.alt =
+                    `${title} project preview`;
             }
         }
 
         modal.style.display = "flex";
-        modal.setAttribute("aria-hidden", "false");
 
-        document.body.classList.add("modal-open");
+        modal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.classList.add(
+            "modal-open"
+        );
+
+        if (closeButton) {
+            closeButton.focus();
+        }
     }
 
     function closeModal() {
         modal.style.display = "none";
-        modal.setAttribute("aria-hidden", "true");
 
-        document.body.classList.remove("modal-open");
+        modal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "modal-open"
+        );
+
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+        }
     }
 
-    projectBoxes.forEach((projectBox) => {
-        projectBox.addEventListener("click", () => {
-            openModal(projectBox);
-        });
-    });
+    projectBoxes.forEach(
+        (projectBox) => {
+            projectBox.addEventListener(
+                "click",
+                (event) => {
+                    if (
+                        event.target.closest(
+                            "a, button"
+                        )
+                    ) {
+                        return;
+                    }
+
+                    openModal(projectBox);
+                }
+            );
+
+            projectBox.setAttribute(
+                "tabindex",
+                "0"
+            );
+
+            projectBox.setAttribute(
+                "role",
+                "button"
+            );
+
+            projectBox.addEventListener(
+                "keydown",
+                (event) => {
+                    if (
+                        event.key ===
+                            "Enter" ||
+                        event.key === " "
+                    ) {
+                        event.preventDefault();
+
+                        openModal(
+                            projectBox
+                        );
+                    }
+                }
+            );
+        }
+    );
 
     if (closeButton) {
-        closeButton.addEventListener("click", closeModal);
+        closeButton.addEventListener(
+            "click",
+            closeModal
+        );
     }
 
-    modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            closeModal();
+    modal.addEventListener(
+        "click",
+        (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
         }
-    });
+    );
 
-    document.addEventListener("keydown", (event) => {
-        if (
-            event.key === "Escape" &&
-            modal.style.display !== "none"
-        ) {
-            closeModal();
+    document.addEventListener(
+        "keydown",
+        (event) => {
+            if (
+                event.key === "Escape" &&
+                modal.getAttribute(
+                    "aria-hidden"
+                ) === "false"
+            ) {
+                closeModal();
+            }
         }
-    });
+    );
 }
-
 
 /* =====================================================
    SMOOTH SCROLLING
 ===================================================== */
 
 function initializeSmoothScrolling() {
-    const anchorLinks = document.querySelectorAll(
-        'a[href^="#"]'
-    );
+    const anchorLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
 
     anchorLinks.forEach((link) => {
-        link.addEventListener("click", (event) => {
-            const targetId = link.getAttribute("href");
+        link.addEventListener(
+            "click",
+            (event) => {
+                const targetId =
+                    link.getAttribute("href");
 
-            if (!targetId || targetId === "#") return;
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
 
-            const targetSection =
-                document.querySelector(targetId);
+                const targetSection =
+                    document.querySelector(
+                        targetId
+                    );
 
-            if (!targetSection) return;
+                if (!targetSection) {
+                    return;
+                }
 
-            event.preventDefault();
+                event.preventDefault();
 
-            targetSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        });
+                targetSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        );
     });
 }
-
 
 /* =====================================================
    RESUME BUTTONS
 ===================================================== */
 
 function initializeResumeButtons() {
-    const resumeButtons = document.querySelectorAll(
-        ".resume-button, .download-btn"
-    );
+    const resumeButtons =
+        document.querySelectorAll(
+            ".resume-button, .download-btn"
+        );
 
     resumeButtons.forEach((button) => {
         button.setAttribute(
@@ -903,10 +1287,12 @@ function initializeResumeButtons() {
             "assets/resume/MakendraCrosby_Resume_3.docx"
         );
 
-        button.setAttribute("download", "");
+        button.setAttribute(
+            "download",
+            ""
+        );
     });
 }
-
 
 /* =====================================================
    BACK TO TOP BUTTON
@@ -914,66 +1300,96 @@ function initializeResumeButtons() {
 
 function initializeBackToTopButton() {
     const backToTopButton =
-        document.getElementById("back-to-top");
+        document.getElementById(
+            "back-to-top"
+        );
 
     if (!backToTopButton) return;
 
     function toggleBackToTopButton() {
-        if (window.scrollY > 500) {
-            backToTopButton.classList.add("show");
-        } else {
-            backToTopButton.classList.remove("show");
-        }
+        backToTopButton.classList.toggle(
+            "show",
+            window.scrollY > 500
+        );
     }
 
-    backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
+    backToTopButton.addEventListener(
+        "click",
+        () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    );
 
     window.addEventListener(
         "scroll",
-        toggleBackToTopButton
+        toggleBackToTopButton,
+        {
+            passive: true
+        }
     );
 
     toggleBackToTopButton();
 }
-
 
 /* =====================================================
    CURRENT YEAR
 ===================================================== */
 
 function updateCurrentYear() {
-    const yearElements =
-        document.querySelectorAll(".current-year");
+    const currentYear =
+        new Date().getFullYear();
 
-    const currentYear = new Date().getFullYear();
+    const yearElements =
+        document.querySelectorAll(
+            ".current-year, #currentYear"
+        );
 
     yearElements.forEach((element) => {
-        element.textContent = currentYear;
+        element.textContent =
+            currentYear;
     });
 }
-
 
 /* =====================================================
    INITIALIZE WEBSITE
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-    headerShadow();
-    scrollActive();
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+        headerShadow();
 
-    initializeTypingEffects();
-    initializeScrollReveal();
-    initializeParticles();
-    initializeProjectFilters();
-    initializeExperienceAccordion();
-    initializeProjectModal();
-    initializeSmoothScrolling();
-    initializeResumeButtons();
-    initializeBackToTopButton();
-    updateCurrentYear();
-});
+        initializeNavigation();
+
+        initializeTypingEffects();
+
+        initializeScrollReveal();
+
+        initializeParticles();
+
+        initializeProjectFilters();
+
+        initializeExperienceSection();
+
+        initializeProjectModal();
+
+        initializeSmoothScrolling();
+
+        initializeResumeButtons();
+
+        initializeBackToTopButton();
+
+        updateCurrentYear();
+
+        window.addEventListener(
+            "scroll",
+            headerShadow,
+            {
+                passive: true
+            }
+        );
+    }
+);
