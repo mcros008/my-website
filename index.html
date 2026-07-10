@@ -502,40 +502,37 @@
 
             <!-- =============================================
                  EXPERIENCE SECTION
-                 Each role expands when the visitor selects
-                 the View Details button.
+                 Filterable and paginated accordion entries.
             ============================================== -->
             <section class="experience section" id="experience">
                 <div class="top-header">
                     <h2>Experience</h2>
+                    <span>Work, leadership, and community involvement</span>
                 </div>
 
-                <div class="experience-container">
+                <div class="experience-filters" role="group" aria-label="Filter experience">
+                    <button type="button" class="experience-filter-btn active" data-filter="all">All</button>
+                    <button type="button" class="experience-filter-btn" data-filter="work">Work</button>
+                    <button type="button" class="experience-filter-btn" data-filter="leadership">Leadership</button>
+                    <button type="button" class="experience-filter-btn" data-filter="volunteer">Volunteer</button>
+                </div>
 
-<div class="experience-filters" role="group" aria-label="Experience filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="work">Work</button>
-        <button class="filter-btn" data-filter="leadership">Leadership</button>
-        <button class="filter-btn" data-filter="volunteer">Volunteer</button>
-    </div>
+                <div class="experience-container" id="experienceItems"></div>
 
-    <div class="experience-grid" id="experienceGrid"></div>
+                <nav class="experience-pagination" id="experiencePagination" aria-label="Experience pages">
+                    <button type="button" class="experience-pagination-arrow" id="experiencePrevious">
+                        &larr; Previous
+                    </button>
 
-    <div class="pagination" id="pagination">
-        <button class="pagination-arrow" id="previousPage" aria-label="Previous page">
-            &larr; Previous
-        </button>
+                    <div class="experience-page-numbers" id="experiencePageNumbers"></div>
 
-        <div class="page-numbers" id="pageNumbers"></div>
+                    <button type="button" class="experience-pagination-arrow" id="experienceNext">
+                        Next &rarr;
+                    </button>
+                </nav>
 
-        <button class="pagination-arrow" id="nextPage" aria-label="Next page">
-            Next &rarr;
-        </button>
-    </div>
-
-    <p class="page-status" id="pageStatus" aria-live="polite"></p>
-</section>
-
+                <p class="experience-page-status" id="experiencePageStatus" aria-live="polite"></p>
+            </section>
 
 
             <!-- =============================================
