@@ -67,8 +67,7 @@ function initializeTypingEffects() {
         new Typed(".typedGreeting", {
             strings: [
                 "Hi, I’m Makendra.",
-                "Welcome to my portfolio.",
-                "Let’s build something meaningful."
+                "Welcome to my portfolio."
             ],
             typeSpeed: 55,
             backSpeed: 30,
@@ -90,10 +89,7 @@ function initializeTypingEffects() {
         new Typed(".typedRole", {
             strings: [
                 "Data Scientist",
-                "Cybersecurity Professional",
-                "AI and Machine Learning Enthusiast",
-                "Software Developer",
-                "Problem Solver"
+                "Cybersecurity Professional"
             ],
             typeSpeed: 50,
             backSpeed: 30,
