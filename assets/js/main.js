@@ -61,38 +61,6 @@ function initializeTypingEffects() {
             cursorChar: "|"
         });
     }
-
-    if (typedRole) {
-        new Typed(".typedRole", {
-            strings: [
-                "Data Scientist",
-                "Cybersecurity Professional"
-            ],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 1500,
-            loop: true,
-            showCursor: true,
-            cursorChar: "|"
-        });
-    }
-
-    if (typedText && !typedGreeting) {
-        new Typed(".typedText", {
-            strings: [
-                "I’m Makendra.",
-                "welcome to my portfolio.",
-                "take a look around."
-            ],
-            typeSpeed: 65,
-            backSpeed: 35,
-            backDelay: 1800,
-            startDelay: 300,
-            loop: true,
-            showCursor: true,
-            cursorChar: "|"
-        });
-    }
 }
 
 /* =====================================================
