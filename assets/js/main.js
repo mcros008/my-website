@@ -161,7 +161,7 @@ function initializeScrollReveal() {
         delay: 200
     });
 
-    scrollReveal.reveal(".experience-card", {
+    scrollReveal.reveal(".experience-item", {
         interval: 150
     });
 
@@ -182,6 +182,10 @@ function initializeScrollReveal() {
     });
 
     scrollReveal.reveal(".gif-container", {
+        delay: 200
+    });
+
+    scrollReveal.reveal(".animation-container", {
         delay: 200
     });
 }
@@ -233,7 +237,9 @@ function initializeNavigation() {
                 scrollY < sectionBottom
             ) {
                 navLinks.forEach((link) => {
-                    link.classList.remove("active-link");
+                    link.classList.remove(
+                        "active-link"
+                    );
                 });
 
                 currentLink.classList.add(
@@ -351,39 +357,23 @@ function initializeParticles() {
 
 /* =====================================================
    PROJECT FILTERING
-
-   Your project filter buttons should use:
-
-   class="project-filter-btn"
-
-   The old class="filter-btn" will also work if the
-   buttons are inside .project-filters.
 ===================================================== */
 
 function initializeProjectFilters() {
     const projectsSection =
         document.getElementById("projects");
 
-    const filterContainer =
-        projectsSection?.querySelector(
-            ".project-filters"
-        ) ||
-        document.querySelector(
-            ".project-filters"
-        );
-
-    const scope =
-        projectsSection || filterContainer;
-
-    if (!scope) return;
+    if (!projectsSection) return;
 
     const filterButtons =
-        scope.querySelectorAll(
-            ".project-filter-btn, .project-filters .filter-btn"
+        projectsSection.querySelectorAll(
+            ".project-filters .filter-btn"
         );
 
     const projectCards =
-        scope.querySelectorAll(".project-card");
+        projectsSection.querySelectorAll(
+            ".project-card"
+        );
 
     if (
         !filterButtons.length ||
@@ -451,7 +441,8 @@ function initializeProjectFilters() {
 const experiences = [
     {
         title: "Scientist",
-        organization: "NSWC Corona Division",
+        organization:
+            "NSWC Corona Division",
         category: "work",
         date: "2026 – Present",
         description:
@@ -465,9 +456,11 @@ const experiences = [
     },
     {
         title: "Graduate Assistant",
-        organization: "Old Dominion University",
+        organization:
+            "Old Dominion University",
         category: "work",
-        date: "August 2025 – May 2026",
+        date:
+            "August 2025 – May 2026",
         description:
             "Supported Living-Learning Communities, supervised peer mentors, organized programs, and helped students connect with campus resources.",
         skills: [
@@ -506,7 +499,8 @@ const experiences = [
         ]
     },
     {
-        title: "Corresponding Secretary",
+        title:
+            "Corresponding Secretary",
         organization:
             "Alpha Kappa Alpha Sorority, Incorporated",
         category: "leadership",
@@ -522,7 +516,8 @@ const experiences = [
     {
         title:
             "Community Outreach Director",
-        organization: "Phi Sigma Rho",
+        organization:
+            "Phi Sigma Rho",
         category: "leadership",
         date: "2026",
         description:
@@ -534,8 +529,10 @@ const experiences = [
         ]
     },
     {
-        title: "Co-Recruitment Chair",
-        organization: "Phi Sigma Rho",
+        title:
+            "Co-Recruitment Chair",
+        organization:
+            "Phi Sigma Rho",
         category: "leadership",
         date: "2026",
         description:
@@ -562,9 +559,11 @@ const experiences = [
     },
     {
         title: "Volunteer",
-        organization: "Monarch Pantry",
+        organization:
+            "Monarch Pantry",
         category: "volunteer",
-        date: "October 2023 – Present",
+        date:
+            "October 2023 – Present",
         description:
             "Assist with organizing food and supplies that support students experiencing food insecurity.",
         skills: [
@@ -574,8 +573,10 @@ const experiences = [
         ]
     },
     {
-        title: "Cybersecurity Mentor",
-        organization: "CTEWorkforce",
+        title:
+            "Cybersecurity Mentor",
+        organization:
+            "CTEWorkforce",
         category: "volunteer",
         date:
             "November 2023 – January 2024",
@@ -588,7 +589,8 @@ const experiences = [
         ]
     },
     {
-        title: "Summer Student Counselor",
+        title:
+            "Summer Student Counselor",
         organization:
             "Old Dominion University",
         category: "volunteer",
@@ -604,7 +606,7 @@ const experiences = [
 ];
 
 /* =====================================================
-   ESCAPE HTML
+   HTML SAFETY HELPER
 ===================================================== */
 
 function escapeHTML(value) {
@@ -617,44 +619,46 @@ function escapeHTML(value) {
 }
 
 /* =====================================================
-   EXPERIENCE FILTERING AND PAGINATION
+   EXPERIENCE FILTERING, PAGINATION, AND ACCORDION
 ===================================================== */
 
 function initializeExperienceSection() {
     const experienceSection =
         document.getElementById("experience");
 
-    const experienceGrid =
+    const experienceContainer =
         document.getElementById(
-            "experienceGrid"
+            "experienceItems"
         );
 
     const pagination =
-        document.getElementById("pagination");
+        document.getElementById(
+            "experiencePagination"
+        );
 
     const pageNumbers =
         document.getElementById(
-            "pageNumbers"
+            "experiencePageNumbers"
         );
 
     const previousPageButton =
         document.getElementById(
-            "previousPage"
+            "experiencePrevious"
         );
 
     const nextPageButton =
         document.getElementById(
-            "nextPage"
+            "experienceNext"
         );
 
     const pageStatus =
         document.getElementById(
-            "pageStatus"
+            "experiencePageStatus"
         );
 
     if (
         !experienceSection ||
-        !experienceGrid ||
+        !experienceContainer ||
         !pagination ||
         !pageNumbers ||
         !previousPageButton ||
@@ -662,7 +666,7 @@ function initializeExperienceSection() {
         !pageStatus
     ) {
         console.warn(
-            "Experience section not initialized because one or more required HTML elements are missing."
+            "Experience section could not load because one or more required HTML elements are missing."
         );
 
         return;
@@ -670,13 +674,8 @@ function initializeExperienceSection() {
 
     const filterButtons =
         experienceSection.querySelectorAll(
-            ".experience-filter-btn, .experience-filters .filter-btn"
+            ".experience-filter-btn"
         );
-
-    /*
-       Change this number if you want more or fewer
-       experience cards on each page.
-    */
 
     const itemsPerPage = 4;
 
@@ -695,72 +694,142 @@ function initializeExperienceSection() {
         );
     }
 
-    function createExperienceCard(
-        experience
+    function createExperienceItem(
+        experience,
+        itemIndex
     ) {
-        const card =
+        const item =
             document.createElement("article");
 
-        card.className =
-            "experience-card";
+        item.className =
+            "experience-item";
 
-        card.dataset.category =
+        item.dataset.category =
             experience.category;
 
-        const skillsHTML =
+        const detailsId =
+            `experience-details-${itemIndex}`;
+
+        const skillsList =
             experience.skills
                 .map(
                     (skill) =>
-                        `<span class="experience-skill">${escapeHTML(
+                        `<li>${escapeHTML(
                             skill
-                        )}</span>`
+                        )}</li>`
                 )
                 .join("");
 
-        card.innerHTML = `
-            <div class="experience-card-header">
+        item.innerHTML = `
+            <div class="experience-header">
                 <div>
-                    <h3>
+                    <h3 class="exp-title">
                         ${escapeHTML(
                             experience.title
                         )}
                     </h3>
 
-                    <p class="experience-company">
+                    <h4>
                         ${escapeHTML(
                             experience.organization
                         )}
-                    </p>
+                    </h4>
                 </div>
 
-                <span class="experience-type">
+                <span class="experience-date">
                     ${escapeHTML(
-                        experience.category
+                        experience.date
                     )}
                 </span>
             </div>
 
-            <p class="experience-date">
-                ${escapeHTML(
-                    experience.date
-                )}
-            </p>
+            <button
+                type="button"
+                class="toggle-btn"
+                aria-expanded="false"
+                aria-controls="${detailsId}"
+            >
+                View Details
 
-            <p class="experience-description">
-                ${escapeHTML(
-                    experience.description
-                )}
-            </p>
+                <i
+                    class="uil uil-angle-down"
+                    aria-hidden="true"
+                ></i>
+            </button>
 
-            <div class="experience-skills">
-                ${skillsHTML}
+            <div
+                class="exp-details"
+                id="${detailsId}"
+                hidden
+            >
+                <p>
+                    ${escapeHTML(
+                        experience.description
+                    )}
+                </p>
+
+                <ul>
+                    ${skillsList}
+                </ul>
             </div>
         `;
 
-        return card;
+        const toggleButton =
+            item.querySelector(
+                ".toggle-btn"
+            );
+
+        const details =
+            item.querySelector(
+                ".exp-details"
+            );
+
+        const icon =
+            toggleButton?.querySelector("i");
+
+        if (
+            toggleButton &&
+            details
+        ) {
+            toggleButton.addEventListener(
+                "click",
+                () => {
+                    const isOpen =
+                        item.classList.toggle(
+                            "open"
+                        );
+
+                    toggleButton.setAttribute(
+                        "aria-expanded",
+                        String(isOpen)
+                    );
+
+                    details.hidden = !isOpen;
+
+                    if (icon) {
+                        icon.className =
+                            isOpen
+                                ? "uil uil-angle-up"
+                                : "uil uil-angle-down";
+                    }
+
+                    const textNode =
+                        toggleButton.childNodes[0];
+
+                    if (textNode) {
+                        textNode.textContent =
+                            isOpen
+                                ? "Hide Details "
+                                : "View Details ";
+                    }
+                }
+            );
+        }
+
+        return item;
     }
 
-    function scrollToExperienceTop() {
+    function scrollToExperienceSection() {
         experienceSection.scrollIntoView({
             behavior: "smooth",
             block: "start"
@@ -789,11 +858,11 @@ function initializeExperienceSection() {
                 page;
 
             pageButton.className =
-                "page-btn";
+                "experience-page-btn";
 
             pageButton.setAttribute(
                 "aria-label",
-                `Go to page ${page}`
+                `Go to experience page ${page}`
             );
 
             if (page === currentPage) {
@@ -814,7 +883,7 @@ function initializeExperienceSection() {
 
                     renderExperiences();
 
-                    scrollToExperienceTop();
+                    scrollToExperienceSection();
                 }
             );
 
@@ -836,14 +905,14 @@ function initializeExperienceSection() {
                 : "none";
 
         if (totalItems > 0) {
-            const entryText =
+            const entryWord =
                 totalItems === 1
                     ? "entry"
                     : "entries";
 
             pageStatus.textContent =
                 `Page ${currentPage} of ${totalPages} • ` +
-                `${totalItems} experience ${entryText}`;
+                `${totalItems} experience ${entryWord}`;
         } else {
             pageStatus.textContent = "";
         }
@@ -881,26 +950,32 @@ function initializeExperienceSection() {
                     itemsPerPage
             );
 
-        experienceGrid.innerHTML = "";
+        experienceContainer.innerHTML =
+            "";
 
         if (
             currentExperiences.length === 0
         ) {
-            experienceGrid.innerHTML = `
+            experienceContainer.innerHTML = `
                 <p class="no-results">
                     No experience found in this category.
                 </p>
             `;
         } else {
             currentExperiences.forEach(
-                (experience) => {
-                    const card =
-                        createExperienceCard(
-                            experience
+                (
+                    experience,
+                    index
+                ) => {
+                    const item =
+                        createExperienceItem(
+                            experience,
+                            startIndex +
+                                index
                         );
 
-                    experienceGrid.appendChild(
-                        card
+                    experienceContainer.appendChild(
+                        item
                     );
                 }
             );
@@ -966,7 +1041,7 @@ function initializeExperienceSection() {
 
             renderExperiences();
 
-            scrollToExperienceTop();
+            scrollToExperienceSection();
         }
     );
 
@@ -990,7 +1065,7 @@ function initializeExperienceSection() {
 
             renderExperiences();
 
-            scrollToExperienceTop();
+            scrollToExperienceSection();
         }
     );
 
@@ -1032,14 +1107,14 @@ function initializeProjectModal() {
             "#project-modal .close"
         );
 
-    const projectBoxes =
+    const projectCards =
         document.querySelectorAll(
             ".project-card[data-title][data-description]"
         );
 
     if (
         !modal ||
-        !projectBoxes.length
+        !projectCards.length
     ) {
         return;
     }
@@ -1066,24 +1141,23 @@ function initializeProjectModal() {
 
     let lastFocusedElement = null;
 
-    function openModal(projectBox) {
+    function openModal(projectCard) {
         const title =
-            projectBox.dataset.title ||
+            projectCard.dataset.title ||
             "Project";
 
         const description =
-            projectBox.dataset.description ||
+            projectCard.dataset.description ||
             "Project details coming soon.";
 
         const link =
-            projectBox.dataset.link || "#";
+            projectCard.dataset.link ||
+            "#";
 
-       // const image =
-           // projectBox.dataset.image || "";
+        const image =
+            projectCard.dataset.image ||
+            "assets/images/projects/coming-soon.png";
 
-       const image =
-          "assets/images/coming-soon.png";
-       
         lastFocusedElement =
             document.activeElement;
 
@@ -1107,17 +1181,18 @@ function initializeProjectModal() {
         }
 
         if (modalImage) {
+            modalImage.src = image;
+
+            modalImage.alt =
+                `${title} project preview`;
+
             modalImage.style.display =
-                image
-                    ? "block"
-                    : "none";
+                "block";
 
-            if (image) {
-                modalImage.src = image;
-
-                modalImage.alt =
-                    `${title} project preview`;
-            }
+            modalImage.onerror = () => {
+                modalImage.src =
+                    "assets/images/projects/coming-soon.png";
+            };
         }
 
         modal.style.display = "flex";
@@ -1153,9 +1228,19 @@ function initializeProjectModal() {
         }
     }
 
-    projectBoxes.forEach(
-        (projectBox) => {
-            projectBox.addEventListener(
+    projectCards.forEach(
+        (projectCard) => {
+            projectCard.setAttribute(
+                "role",
+                "button"
+            );
+
+            projectCard.setAttribute(
+                "tabindex",
+                "0"
+            );
+
+            projectCard.addEventListener(
                 "click",
                 (event) => {
                     if (
@@ -1166,21 +1251,13 @@ function initializeProjectModal() {
                         return;
                     }
 
-                    openModal(projectBox);
+                    openModal(
+                        projectCard
+                    );
                 }
             );
 
-            projectBox.setAttribute(
-                "tabindex",
-                "0"
-            );
-
-            projectBox.setAttribute(
-                "role",
-                "button"
-            );
-
-            projectBox.addEventListener(
+            projectCard.addEventListener(
                 "keydown",
                 (event) => {
                     if (
@@ -1191,7 +1268,7 @@ function initializeProjectModal() {
                         event.preventDefault();
 
                         openModal(
-                            projectBox
+                            projectCard
                         );
                     }
                 }
@@ -1310,9 +1387,12 @@ function initializeBackToTopButton() {
     if (!backToTopButton) return;
 
     function toggleBackToTopButton() {
+        const shouldShow =
+            window.scrollY > 500;
+
         backToTopButton.classList.toggle(
             "show",
-            window.scrollY > 500
+            shouldShow
         );
     }
 
@@ -1357,6 +1437,103 @@ function updateCurrentYear() {
 }
 
 /* =====================================================
+   LOTTIE FALLBACK
+===================================================== */
+
+function initializeLottieFallback() {
+    const lottiePlayers =
+        document.querySelectorAll(
+            "dotlottie-player"
+        );
+
+    lottiePlayers.forEach((player) => {
+        player.addEventListener(
+            "error",
+            () => {
+                const container =
+                    player.closest(
+                        ".animation-container"
+                    );
+
+                if (container) {
+                    container.style.display =
+                        "none";
+                }
+            }
+        );
+    });
+}
+
+/* =====================================================
+   CONTACT FORM PROTECTION
+===================================================== */
+
+function initializeContactForm() {
+    const contactForm =
+        document.querySelector(
+            ".contact-form"
+        );
+
+    if (!contactForm) return;
+
+    const action =
+        contactForm.getAttribute(
+            "action"
+        );
+
+    if (!action || action === "#") {
+        contactForm.addEventListener(
+            "submit",
+            (event) => {
+                event.preventDefault();
+
+                alert(
+                    "The contact form is not connected yet. Please email me directly at makendracrosby100@gmail.com."
+                );
+            }
+        );
+    }
+}
+
+/* =====================================================
+   IMAGE FALLBACKS
+===================================================== */
+
+function initializeImageFallbacks() {
+    const projectImages =
+        document.querySelectorAll(
+            ".project-card img"
+        );
+
+    const fallbackImage =
+        "assets/images/projects/coming-soon.png";
+
+    projectImages.forEach((image) => {
+        image.addEventListener(
+            "error",
+            () => {
+                if (
+                    image.src.includes(
+                        "coming-soon.png"
+                    )
+                ) {
+                    image.style.display =
+                        "none";
+
+                    return;
+                }
+
+                image.src =
+                    fallbackImage;
+
+                image.alt =
+                    "Project coming soon";
+            }
+        );
+    });
+}
+
+/* =====================================================
    INITIALIZE WEBSITE
 ===================================================== */
 
@@ -1386,6 +1563,12 @@ document.addEventListener(
         initializeBackToTopButton();
 
         updateCurrentYear();
+
+        initializeLottieFallback();
+
+        initializeContactForm();
+
+        initializeImageFallbacks();
 
         window.addEventListener(
             "scroll",
