@@ -422,15 +422,14 @@ const experiences = [
             "Testing"
         ]
     }, */
+const experience = [
     {
         title: "Graduate Administrative Assistant",
-        organization:
-            "Old Dominion University",
+        organization: "Old Dominion University",
         category: "work",
-        date:
-            "August 2025 – May 2026",
-        description:
-            "Supported the Living-Learning Communities program, supervised peer mentors, organized programs, and helped students connect with campus resources.",
+        startDate: "2025-08",
+        endDate: "2026-05",
+        description: "Supported the Living-Learning Communities program, supervised peer mentors, organized programs, and helped students connect with campus resources.",
         skills: [
             "Program Support",
             "Mentoring",
@@ -438,13 +437,12 @@ const experiences = [
         ]
     },
     {
-        title: "SMART Scholar Intern",
-        organization:
-            "NSWC Dahlgren Division",
+        title: "SMART Scholar Computer Science Intern",
+        organization: "NSWC Dahlgren Division",
         category: "work",
-        date: "May 2025 – Jul 2025",
-        description:
-            "Created testing procedures, updated system requirement documents, and developed technical guidance for internal teams.",
+        startDate: "2025-05",
+        endDate: "2025-07",
+        description: "Created testing procedures, updated system requirement documents, and developed technical guidance for internal teams.",
         skills: [
             "Testing",
             "Documentation",
@@ -453,12 +451,11 @@ const experiences = [
     },
     {
         title: "Cybersecurity Impact Learning Community Peer Mentor",
-        organization:
-            "Old Dominion University",
+        organization: "Old Dominion University",
         category: "work",
-        date: "Aug 2024 – Dec 2024",
-        description:
-            "Mentored first-year cybersecurity students by providing academic guidance, connecting them with campus resources, leading discussions, and helping them transition successfully into college life.",
+        startDate: "2024-08",
+        endDate: "2024-12",
+        description: "Mentored first-year cybersecurity students by providing academic guidance, connecting them with campus resources, leading discussions, and helping them transition successfully into college life.",
         skills: [
             "Mentoring",
             "Leadership",
@@ -467,12 +464,11 @@ const experiences = [
     },
     {
         title: "Cybersecurity Living-Learning Community Peer Mentor",
-        organization:
-            "Old Dominion University",
+        organization: "Old Dominion University",
         category: "work",
-        date: "Aug 2023 – May 2024",
-        description:
-            "Mentored first-year cybersecurity students by providing academic guidance, connecting them with campus resources, leading discussions, and helping them transition successfully into college life.",
+        startDate: "2023-08",
+        endDate: "2024-05",
+        description: "Mentored first-year cybersecurity students by providing academic guidance, connecting them with campus resources, leading discussions, and helping them transition successfully into college life.",
         skills: [
             "Mentoring",
             "Leadership",
@@ -481,26 +477,24 @@ const experiences = [
     },
     {
         title: "Cyber Risk Management Specialist / Mini-Consultant",
-        organization:
-            "Old Dominion University",
+        organization: "Old Dominion University",
         category: "work",
-        date: "Jan 2024 – Apr 2024",
-        description:
-            "Collaborated with a team to launch a pilot cybersecurity clinic supporting local governments and small businesses. Provided cybersecurity guidance, assisted with risk management and policy development, and presented tailored recommendations to clients.",
+        startDate: "2024-01",
+        endDate: "2024-04",
+        description: "Collaborated with a team to launch a pilot cybersecurity clinic supporting local governments and small businesses. Provided cybersecurity guidance, assisted with risk management and policy development, and presented tailored recommendations to clients.",
         skills: [
             "Consulting",
             "Policy Development",
             "Client Communication"
         ]
     },
-   {
+    {
         title: "Cyber Risk Management Specialist / Mini-Consultant",
-        organization:
-            "Startfield, Inc.",
+        organization: "Startfield, Inc.",
         category: "work",
-        date: "Jun 2023 – Aug 2023",
-        description:
-            "Provided guidance and mentoring to high school students in the DMV area interested in pursuing cybersecurity education and career opportunities.",
+        startDate: "2023-06",
+        endDate: "2023-08",
+        description: "Provided guidance and mentoring to high school students in the DMV area interested in pursuing cybersecurity education and career opportunities.",
         skills: [
             "Presentation",
             "Communication",
@@ -508,14 +502,12 @@ const experiences = [
         ]
     },
     {
-        title:
-            "Data Science Student Ambassador",
-        organization:
-            "Old Dominion University",
+        title: "Data Science Student Ambassador",
+        organization: "Old Dominion University",
         category: "leadership",
-        date: "Jan 2025 – May 2026",
-        description:
-            "Represented the School of Data Science and helped promote its academic programs, events, and student opportunities.",
+        startDate: "2025-01",
+        endDate: "2026-05",
+        description: "Represented the School of Data Science and helped promote its academic programs, events, and student opportunities.",
         skills: [
             "Public Speaking",
             "Outreach",
@@ -523,29 +515,12 @@ const experiences = [
         ]
     },
     {
-        title:
-            "Corresponding Secretary",
-        organization:
-            "Kappa Gamma Chapter of Alpha Kappa Alpha Sorority, Incorporated",
+        title: "Community Outreach Director",
+        organization: "Alpha Rho Chapter of Phi Sigma Rho",
         category: "leadership",
-        date: "Dec 2023 –  Dec 2024",
-        description:
-            "Managed chapter communication, correspondence, meeting information, and organizational records.",
-        skills: [
-            "Communication",
-            "Organization",
-            "Administration"
-        ]
-    },
-    {
-        title:
-            "Community Outreach Director",
-        organization:
-            "Alpha Rho Chapter Phi Sigma Rho",
-        category: "leadership",
-        date: "May 2025 - May 2026",
-        description:
-            "Coordinated service opportunities and community-focused programs for members of the organization.",
+        startDate: "2025-04",
+        endDate: "2026-05",
+        description: "Coordinated service opportunities and community-focused programs for members of the organization.",
         skills: [
             "Community Outreach",
             "Planning",
@@ -553,14 +528,12 @@ const experiences = [
         ]
     },
     {
-        title:
-            "Co-Recruitment Chair",
-        organization:
-            "Alpha Rho Chapter of Phi Sigma Rho",
+        title: "Co-Recruitment Chair",
+        organization: "Alpha Rho Chapter of Phi Sigma Rho",
         category: "leadership",
-        date: "2026",
-        description:
-            "Helped plan recruitment activities and create an engaging experience for prospective members.",
+        startDate: "2025-04",
+        endDate: "2026-05",
+        description: "Helped plan recruitment activities and create an engaging experience for prospective members.",
         skills: [
             "Recruitment",
             "Event Planning",
@@ -568,13 +541,25 @@ const experiences = [
         ]
     },
     {
+        title: "Corresponding Secretary",
+        organization: "Kappa Gamma Chapter of Alpha Kappa Alpha Sorority, Incorporated",
+        category: "leadership",
+        startDate: "2023-12",
+        endDate: "2024-12",
+        description: "Managed chapter communication, correspondence, meeting information, and organizational records.",
+        skills: [
+            "Communication",
+            "Organization",
+            "Administration"
+        ]
+    },
+    {
         title: "Volunteer",
-        organization:
-            "Monarch Clothing Closet",
+        organization: "Monarch Clothing Closet",
         category: "volunteer",
-        date: "Apr 2025 – May 2026",
-        description:
-            "Help students access professional and everyday clothing through organization, inventory support, and direct assistance.",
+        startDate: "2025-04",
+        endDate: "2026-05",
+        description: "Help students access professional and everyday clothing through organization, inventory support, and direct assistance.",
         skills: [
             "Service",
             "Organization",
@@ -583,13 +568,11 @@ const experiences = [
     },
     {
         title: "Volunteer",
-        organization:
-            "Monarch Pantry",
+        organization: "Monarch Pantry",
         category: "volunteer",
-        date:
-            "Oct 2023 – May 2026",
-        description:
-            "Assist with organizing food and supplies that support students experiencing food insecurity.",
+        startDate: "2023-10",
+        endDate: "2026-05",
+        description: "Assist with organizing food and supplies that support students experiencing food insecurity.",
         skills: [
             "Community Service",
             "Inventory",
@@ -597,15 +580,12 @@ const experiences = [
         ]
     },
     {
-        title:
-            "Cybersecurity Mentor",
-        organization:
-            "CTEWorkforce",
+        title: "Cybersecurity Mentor",
+        organization: "CTEWorkforce",
         category: "volunteer",
-        date:
-            "Nov 2023 – Jan 2024",
-        description:
-            "Provided guidance and encouragement to students interested in cybersecurity education and career paths.",
+        startDate: "2023-11",
+        endDate: "2024-01",
+        description: "Provided guidance and encouragement to students interested in cybersecurity education and career paths.",
         skills: [
             "Cybersecurity",
             "Mentoring",
@@ -613,14 +593,12 @@ const experiences = [
         ]
     },
     {
-        title:
-            "Summer Student Counselor",
-        organization:
-            "Old Dominion University",
+        title: "Summer Student Counselor",
+        organization: "Old Dominion University",
         category: "volunteer",
-        date: "Aug 2023",
-        description:
-            "Helped incoming students navigate campus resources and adjust to the university environment.",
+        startDate: "2023-08",
+        endDate: "2023-08",
+        description: "Helped incoming students navigate campus resources and adjust to the university environment.",
         skills: [
             "Student Support",
             "Communication",
@@ -628,6 +606,21 @@ const experiences = [
         ]
     }
 ];
+
+const monthNames = [
+    "January", "February", "March", "April",
+    "May", "June", "July", "August",
+    "September", "October", "November", "December"
+];
+
+function formatDate(startDate, endDate) {
+    const [startYear, startMonth] = startDate.split("-");
+    const [endYear, endMonth] = endDate.split("-");
+
+    return `${monthNames[startMonth - 1]} ${startYear} – ${monthNames[endMonth - 1]} ${endYear}`;
+}
+
+experience.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
 
 /* =====================================================
    HTML SAFETY HELPER
@@ -707,16 +700,21 @@ function initializeExperienceSection() {
     let currentPage = 1;
 
     function getFilteredExperiences() {
-        if (activeFilter === "all") {
-            return experiences;
-        }
+    const filteredExperiences =
+        activeFilter === "all"
+            ? [...experiences]
+            : experiences.filter(
+                  (experience) =>
+                      experience.category ===
+                      activeFilter
+              );
 
-        return experiences.filter(
-            (experience) =>
-                experience.category ===
-                activeFilter
-        );
-    }
+    return filteredExperiences.sort(
+        (a, b) =>
+            new Date(b.startDate) -
+            new Date(a.startDate)
+    );
+}
 
     function createExperienceItem(
         experience,
