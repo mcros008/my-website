@@ -422,7 +422,7 @@ function initializeProjectFilters() {
             "Testing"
         ]
     }, */
-const experience = [
+const experiences = [
     {
         title: "Graduate Administrative Assistant",
         organization: "Old Dominion University",
