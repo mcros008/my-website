@@ -1078,9 +1078,12 @@ function initializeProjectModal() {
         const link =
             projectBox.dataset.link || "#";
 
-        const image =
-            projectBox.dataset.image || "";
+       // const image =
+           // projectBox.dataset.image || "";
 
+       const image =
+          "assets/images/coming-soon.png";
+       
         lastFocusedElement =
             document.activeElement;
 
