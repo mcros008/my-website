@@ -620,7 +620,7 @@ function formatDate(startDate, endDate) {
     return `${monthNames[startMonth - 1]} ${startYear} – ${monthNames[endMonth - 1]} ${endYear}`;
 }
 
-experience.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
+// experience.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
 
 /* =====================================================
    HTML SAFETY HELPER
@@ -758,11 +758,14 @@ function initializeExperienceSection() {
                     </h4>
                 </div>
 
-                <span class="experience-date">
-                    ${escapeHTML(
-                        experience.date
-                    )}
-                </span>
+   <span class="experience-date">
+    ${escapeHTML(
+        formatDate(
+            experience.startDate,
+            experience.endDate
+        )
+    )}
+   </span>
             </div>
 
             <button
