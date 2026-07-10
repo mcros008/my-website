@@ -407,7 +407,7 @@ function initializeProjectFilters() {
 ===================================================== */
 
 const experiences = [
-    {
+/*    {
         title: "Scientist",
         organization:
             "NSWC Corona Division",
@@ -421,16 +421,16 @@ const experiences = [
             "AI",
             "Testing"
         ]
-    },
+    }, */
     {
-        title: "Graduate Assistant",
+        title: "Graduate Administrative Assistant",
         organization:
             "Old Dominion University",
         category: "work",
         date:
             "August 2025 – May 2026",
         description:
-            "Supported Living-Learning Communities, supervised peer mentors, organized programs, and helped students connect with campus resources.",
+            "Supported the Living-Learning Communities program, supervised peer mentors, organized programs, and helped students connect with campus resources.",
         skills: [
             "Program Support",
             "Mentoring",
@@ -440,9 +440,9 @@ const experiences = [
     {
         title: "SMART Scholar Intern",
         organization:
-            "NSWCDD Dahlgren Division",
+            "NSWC Dahlgren Division",
         category: "work",
-        date: "May 2025 – July 2025",
+        date: "May 2025 – Jul 2025",
         description:
             "Created testing procedures, updated system requirement documents, and developed technical guidance for internal teams.",
         skills: [
@@ -452,12 +452,68 @@ const experiences = [
         ]
     },
     {
+        title: "Cybersecurity Impact Learning Community Peer Mentor",
+        organization:
+            "Old Dominion University",
+        category: "work",
+        date: "Aug 2024 – Dec 2024",
+        description:
+            "Mentored first-year cybersecurity students by providing academic guidance, connecting them with campus resources, leading discussions, and helping them transition successfully into college life.",
+        skills: [
+            "Mentoring",
+            "Leadership",
+            "Student Success"
+        ]
+    },
+    {
+        title: "Cybersecurity Living-Learning Community Peer Mentor",
+        organization:
+            "Old Dominion University",
+        category: "work",
+        date: "Aug 2023 – May 2024",
+        description:
+            "Mentored first-year cybersecurity students by providing academic guidance, connecting them with campus resources, leading discussions, and helping them transition successfully into college life.",
+        skills: [
+            "Mentoring",
+            "Leadership",
+            "Student Success"
+        ]
+    },
+    {
+        title: "Cyber Risk Management Specialist / Mini-Consultant",
+        organization:
+            "Old Dominion University",
+        category: "work",
+        date: "Jan 2024 – Apr 2024",
+        description:
+            "Collaborated with a team to launch a pilot cybersecurity clinic supporting local governments and small businesses. Provided cybersecurity guidance, assisted with risk management and policy development, and presented tailored recommendations to clients.",
+        skills: [
+            "Consulting",
+            "Policy Development",
+            "Client Communication"
+        ]
+    },
+   {
+        title: "Cyber Risk Management Specialist / Mini-Consultant",
+        organization:
+            "Startfield, Inc.",
+        category: "work",
+        date: "Jun 2023 – Aug 2023",
+        description:
+            "Provided guidance and mentoring to high school students in the DMV area interested in pursuing cybersecurity education and career opportunities.",
+        skills: [
+            "Presentation",
+            "Communication",
+            "Video Editing"
+        ]
+    },
+    {
         title:
             "Data Science Student Ambassador",
         organization:
             "Old Dominion University",
         category: "leadership",
-        date: "2025 – 2026",
+        date: "Jan 2025 – May 2026",
         description:
             "Represented the School of Data Science and helped promote its academic programs, events, and student opportunities.",
         skills: [
@@ -470,9 +526,9 @@ const experiences = [
         title:
             "Corresponding Secretary",
         organization:
-            "Alpha Kappa Alpha Sorority, Incorporated",
+            "Kappa Gamma Chapter of Alpha Kappa Alpha Sorority, Incorporated",
         category: "leadership",
-        date: "2023 – 2024",
+        date: "Dec 2023 –  Dec 2024",
         description:
             "Managed chapter communication, correspondence, meeting information, and organizational records.",
         skills: [
@@ -485,9 +541,9 @@ const experiences = [
         title:
             "Community Outreach Director",
         organization:
-            "Phi Sigma Rho",
+            "Alpha Rho Chapter Phi Sigma Rho",
         category: "leadership",
-        date: "2026",
+        date: "May 2025 - May 2026",
         description:
             "Coordinated service opportunities and community-focused programs for members of the organization.",
         skills: [
@@ -500,7 +556,7 @@ const experiences = [
         title:
             "Co-Recruitment Chair",
         organization:
-            "Phi Sigma Rho",
+            "Alpha Rho Chapter of Phi Sigma Rho",
         category: "leadership",
         date: "2026",
         description:
@@ -516,7 +572,7 @@ const experiences = [
         organization:
             "Monarch Clothing Closet",
         category: "volunteer",
-        date: "April 2025 – Present",
+        date: "Apr 2025 – May 2026",
         description:
             "Help students access professional and everyday clothing through organization, inventory support, and direct assistance.",
         skills: [
@@ -531,7 +587,7 @@ const experiences = [
             "Monarch Pantry",
         category: "volunteer",
         date:
-            "October 2023 – Present",
+            "Oct 2023 – May 2026",
         description:
             "Assist with organizing food and supplies that support students experiencing food insecurity.",
         skills: [
@@ -547,7 +603,7 @@ const experiences = [
             "CTEWorkforce",
         category: "volunteer",
         date:
-            "November 2023 – January 2024",
+            "Nov 2023 – Jan 2024",
         description:
             "Provided guidance and encouragement to students interested in cybersecurity education and career paths.",
         skills: [
@@ -562,7 +618,7 @@ const experiences = [
         organization:
             "Old Dominion University",
         category: "volunteer",
-        date: "August 2023",
+        date: "Aug 2023",
         description:
             "Helped incoming students navigate campus resources and adjust to the university environment.",
         skills: [
