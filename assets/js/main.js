@@ -471,6 +471,291 @@ function initializeExperienceAccordion() {
     });
 }
 
+const experiences = [
+    {
+        title: "Scientist",
+        organization: "NSWC Corona Division",
+        category: "work",
+        date: "2026 – Present",
+        description:
+            "Supporting technical work related to data science, cybersecurity, artificial intelligence, testing, and evaluation for Navy systems.",
+        skills: ["Data Science", "Cybersecurity", "AI", "Testing"]
+    },
+    {
+        title: "Graduate Assistant",
+        organization: "Old Dominion University",
+        category: "work",
+        date: "August 2025 – May 2026",
+        description:
+            "Supported Living-Learning Communities, supervised peer mentors, organized programs, and helped students connect with campus resources.",
+        skills: ["Program Support", "Mentoring", "Communication"]
+    },
+    {
+        title: "SMART Scholar Intern",
+        organization: "NSWCDD Dahlgren Division",
+        category: "work",
+        date: "May 2025 – July 2025",
+        description:
+            "Created testing procedures, updated system requirement documents, and developed technical guidance for internal teams.",
+        skills: ["Testing", "Documentation", "Systems Engineering"]
+    },
+    {
+        title: "Data Science Student Ambassador",
+        organization: "Old Dominion University",
+        category: "leadership",
+        date: "2025 – 2026",
+        description:
+            "Represented the School of Data Science and helped promote its academic programs, events, and student opportunities.",
+        skills: ["Public Speaking", "Outreach", "Leadership"]
+    },
+    {
+        title: "Corresponding Secretary",
+        organization: "Alpha Kappa Alpha Sorority, Incorporated",
+        category: "leadership",
+        date: "2023 – 2024",
+        description:
+            "Managed chapter communication, correspondence, meeting information, and organizational records.",
+        skills: ["Communication", "Organization", "Administration"]
+    },
+    {
+        title: "Community Outreach Director",
+        organization: "Phi Sigma Rho",
+        category: "leadership",
+        date: "2026",
+        description:
+            "Coordinated service opportunities and community-focused programs for members of the organization.",
+        skills: ["Community Outreach", "Planning", "Teamwork"]
+    },
+    {
+        title: "Co-Recruitment Chair",
+        organization: "Phi Sigma Rho",
+        category: "leadership",
+        date: "2026",
+        description:
+            "Helped plan recruitment activities and create an engaging experience for prospective members.",
+        skills: ["Recruitment", "Event Planning", "Collaboration"]
+    },
+    {
+        title: "Volunteer",
+        organization: "Monarch Clothing Closet",
+        category: "volunteer",
+        date: "April 2025 – Present",
+        description:
+            "Help students access professional and everyday clothing through organization, inventory support, and direct assistance.",
+        skills: ["Service", "Organization", "Student Support"]
+    },
+    {
+        title: "Volunteer",
+        organization: "Monarch Pantry",
+        category: "volunteer",
+        date: "October 2023 – Present",
+        description:
+            "Assist with organizing food and supplies that support students experiencing food insecurity.",
+        skills: ["Community Service", "Inventory", "Teamwork"]
+    },
+    {
+        title: "Cybersecurity Mentor",
+        organization: "CTEWorkforce",
+        category: "volunteer",
+        date: "November 2023 – January 2024",
+        description:
+            "Provided guidance and encouragement to students interested in cybersecurity education and career paths.",
+        skills: ["Cybersecurity", "Mentoring", "Career Guidance"]
+    },
+    {
+        title: "Summer Student Counselor",
+        organization: "Old Dominion University",
+        category: "volunteer",
+        date: "August 2023",
+        description:
+            "Helped incoming students navigate campus resources and adjust to the university environment.",
+        skills: ["Student Support", "Communication", "Campus Engagement"]
+    }
+];
+
+const experienceGrid = document.getElementById("experienceGrid");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const pageNumbers = document.getElementById("pageNumbers");
+const previousPageButton = document.getElementById("previousPage");
+const nextPageButton = document.getElementById("nextPage");
+const pageStatus = document.getElementById("pageStatus");
+
+const itemsPerPage = 6;
+
+let activeFilter = "all";
+let currentPage = 1;
+
+function getFilteredExperiences() {
+    if (activeFilter === "all") {
+        return experiences;
+    }
+
+    return experiences.filter(
+        (experience) => experience.category === activeFilter
+    );
+}
+
+function createExperienceCard(experience) {
+    const card = document.createElement("article");
+    card.classList.add("experience-card");
+
+    const skillsHTML = experience.skills
+        .map(
+            (skill) =>
+                `<span class="experience-skill">${escapeHTML(skill)}</span>`
+        )
+        .join("");
+
+    card.innerHTML = `
+        <div class="experience-card-header">
+            <div>
+                <h3>${escapeHTML(experience.title)}</h3>
+                <p class="experience-company">
+                    ${escapeHTML(experience.organization)}
+                </p>
+            </div>
+
+            <span class="experience-type">
+                ${escapeHTML(experience.category)}
+            </span>
+        </div>
+
+        <p class="experience-date">${escapeHTML(experience.date)}</p>
+
+        <p class="experience-description">
+            ${escapeHTML(experience.description)}
+        </p>
+
+        <div class="experience-skills">
+            ${skillsHTML}
+        </div>
+    `;
+
+    return card;
+}
+
+function renderExperiences() {
+    const filteredExperiences = getFilteredExperiences();
+    const totalPages = Math.ceil(filteredExperiences.length / itemsPerPage);
+
+    if (currentPage > totalPages && totalPages > 0) {
+        currentPage = totalPages;
+    }
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const currentExperiences = filteredExperiences.slice(startIndex, endIndex);
+
+    experienceGrid.innerHTML = "";
+
+    if (currentExperiences.length === 0) {
+        experienceGrid.innerHTML = `
+            <p class="no-results">No experience found in this category.</p>
+        `;
+    } else {
+        currentExperiences.forEach((experience) => {
+            experienceGrid.appendChild(createExperienceCard(experience));
+        });
+    }
+
+    renderPagination(totalPages, filteredExperiences.length);
+}
+
+function renderPagination(totalPages, totalItems) {
+    pageNumbers.innerHTML = "";
+
+    for (let page = 1; page <= totalPages; page++) {
+        const pageButton = document.createElement("button");
+
+        pageButton.type = "button";
+        pageButton.textContent = page;
+        pageButton.classList.add("page-btn");
+        pageButton.setAttribute("aria-label", `Go to page ${page}`);
+
+        if (page === currentPage) {
+            pageButton.classList.add("active");
+            pageButton.setAttribute("aria-current", "page");
+        }
+
+        pageButton.addEventListener("click", () => {
+            currentPage = page;
+            renderExperiences();
+            scrollToExperienceTop();
+        });
+
+        pageNumbers.appendChild(pageButton);
+    }
+
+    previousPageButton.disabled = currentPage === 1;
+    nextPageButton.disabled =
+        currentPage === totalPages || totalPages === 0;
+
+    if (totalPages <= 1) {
+        document.getElementById("pagination").style.display = "none";
+    } else {
+        document.getElementById("pagination").style.display = "flex";
+    }
+
+    pageStatus.textContent =
+        totalItems > 0
+            ? `Page ${currentPage} of ${totalPages} • ${totalItems} experience ${
+                  totalItems === 1 ? "entry" : "entries"
+              }`
+            : "";
+}
+
+function scrollToExperienceTop() {
+    document.getElementById("experience").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+function escapeHTML(value) {
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        filterButtons.forEach((filterButton) => {
+            filterButton.classList.remove("active");
+        });
+
+        button.classList.add("active");
+        activeFilter = button.dataset.filter;
+        currentPage = 1;
+
+        renderExperiences();
+    });
+});
+
+previousPageButton.addEventListener("click", () => {
+    if (currentPage > 1) {
+        currentPage--;
+        renderExperiences();
+        scrollToExperienceTop();
+    }
+});
+
+nextPageButton.addEventListener("click", () => {
+    const filteredExperiences = getFilteredExperiences();
+    const totalPages = Math.ceil(filteredExperiences.length / itemsPerPage);
+
+    if (currentPage < totalPages) {
+        currentPage++;
+        renderExperiences();
+        scrollToExperienceTop();
+    }
+});
+
+renderExperiences();
+
+const itemsPerPage = 6;
 
 /* =====================================================
    PROJECT MODAL
