@@ -512,6 +512,31 @@
 
                 <div class="experience-container">
 
+<div class="experience-filters" role="group" aria-label="Experience filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="work">Work</button>
+        <button class="filter-btn" data-filter="leadership">Leadership</button>
+        <button class="filter-btn" data-filter="volunteer">Volunteer</button>
+    </div>
+
+    <div class="experience-grid" id="experienceGrid"></div>
+
+    <div class="pagination" id="pagination">
+        <button class="pagination-arrow" id="previousPage" aria-label="Previous page">
+            &larr; Previous
+        </button>
+
+        <div class="page-numbers" id="pageNumbers"></div>
+
+        <button class="pagination-arrow" id="nextPage" aria-label="Next page">
+            Next &rarr;
+        </button>
+    </div>
+
+    <p class="page-status" id="pageStatus" aria-live="polite"></p>
+</section>
+
+
                         <!-- Graduate Assistant -->
                     <article class="experience-item">
                         <div class="experience-header">
